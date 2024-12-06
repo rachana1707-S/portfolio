@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background:#eae0d5f9; /* Light Cream */
+  color: #0a0908; /* Almost Black */
+  background-size: cover;
+}
+
+header {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: #22333b; /* Dark Blue-Gray */
+}
+
+header .navbar-brand {
+  color: #eae0d5; /* Light Cream */
+}
+
+header .nav-link {
+  color: #eae0d5; /* Light Cream */
+}
+
+header .nav-link:hover {
+  color: #c6ac8f; /* Beige */
+}
+
+/* About Section */
+#about {
+  background: #22333b; /* Dark Blue-Gray */
+  color: #eae0d5; /* Light Cream */
+  height: 500px;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* Arrow Shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide-up {
+  animation: slideup 1.5s ease-in-out forwards;
+}
+
+@keyframes slideup {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+
+/* Education Section */
+.roadmap {
+  border-left: 3px solid #5e503f; /* Vertical line */
+
+}
+.roadmap-item {
+  opacity: 0; /* Start hidden */
+  transform: translateX(50px); /* Start slightly off-screen */
+}
+
+.slide-out-right {
+  animation: slideOutRight 1.5s ease-in-out forwards;
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+}
+
+/* Skills Section */
+#skills {
+  background: #22333b; /* Beige */
+  color: #eae0d5; /* Almost Black */
+}
+
+.skill-box {
+  border: 2px solid #5e503f; /* Dark Brown */
+  padding: 20px;
+  border-radius: 8px;
+  background: #eae0d5; /* Light Cream */
+  margin: 10px;
+  color: #22333b; /* Dark Blue-Gray */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skill-box:hover {
+  background: #5e503f; /* Dark Brown */
+  color: #eae0d5; /* Light Cream */
+  transition: 0.3s;
+}
+
+/* Projects Section */
+#projects {
+  background: #22333b; /* Light Cream */
+  color: #eae0d5; /* Almost Black */
+}
+
+.project-card {
+  border: 1px solid #5e503f; /* Dark Brown */
+  padding: 10px;
+  border-radius: 5px;
+  background: #eae0d5; /* Beige */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h4 {
+  color: #22333b; /* Dark Blue-Gray */
+}
+
+.project-card:hover {
+  background: #5e503f; /* Dark Brown */
+  color: #eae0d5; /* Light Cream */
+  transition: 0.3s;
+}
+
+/* Contact Section */
+#contact {
+  background: #22333b; /* Dark Blue-Gray */
+  color: #eae0d5; /* Light Cream */
+}
+
+/* Footer */
+footer {
+  background: #0a0908; /* Almost Black */
+  color: #eae0d5; /* Light Cream */
+}
+
+footer a {
+  color: #c6ac8f; /* Beige */
+}
+
+footer a:hover {
+  color: #5e503f; /* Dark Brown */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate {
+  animation: fadeIn 1.5s ease-in-out;
+}
