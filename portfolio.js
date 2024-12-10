@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
             entry.target.classList.add("slide-up");
           } else if (entry.target.classList.contains("roadmap-item")) {
             entry.target.classList.add("slide-out-right");
+          } else if (entry.target.classList.contains("exp-item")) {
+            entry.target.classList.add("slide-out-left");
           }
         }
       });
@@ -37,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Observe Each Roadmap Item
   document.querySelectorAll(".roadmap-item").forEach(item => {
+    observer.observe(item);
+  });
+
+  document.querySelectorAll(".exp-item").forEach(item => {
     observer.observe(item);
   });
 });

@@ -55,8 +55,12 @@ header .nav-link:hover {
 /* Education Section */
 .roadmap {
   border-left: 3px solid #5e503f; /* Vertical line */
-
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 50px; /* Add padding to create space for images */
 }
+
 .roadmap-item {
   opacity: 0; /* Start hidden */
   transform: translateX(50px); /* Start slightly off-screen */
@@ -77,56 +81,149 @@ header .nav-link:hover {
   }
 }
 
-/* Skills Section */
-#skills {
-  background: #22333b; /* Beige */
-  color: #eae0d5; /* Almost Black */
+/* Logo/Image Section */
+.logo-container {
+  display: flex;
+  justify-content: center; /* Center the images inside the container */
+  align-items: center;
+  flex-direction: column; /* Stack images vertically if you have multiple */
 }
 
-.skill-box {
-  border: 2px solid #5e503f; /* Dark Brown */
-  padding: 20px;
-  border-radius: 8px;
-  background: #eae0d5; /* Light Cream */
-  margin: 10px;
-  color: #22333b; /* Dark Blue-Gray */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+.logo {
+  max-width: 100px; /* Adjust size as needed */
+  height: 100px; /* Maintain height */
+  width:100px;
+  border-radius: 50%; /* Make the images circular */
+  border: 3px solid #5e503f; /* Add border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  object-fit: cover; /* Ensure the image fills the circle without distortion */
+  margin-top: 20px; /* Add spacing between images if you have multiple */
 }
 
-.skill-box:hover {
-  background: #5e503f; /* Dark Brown */
-  color: #eae0d5; /* Light Cream */
-  transition: 0.3s;
+
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+}
+
+
+
+
+
+
+/* Experience */
+.exp {
+  border-right: 3px solid #5e503f; /* Vertical line on the right */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
+  padding-right: 20px;
+}
+
+.exp-item {
+  opacity: 0; /* Start hidden */
+  transform: translateX(0); /* Start at the vertical line */
+}
+
+.slide-out-left {
+  animation: slideOutLeft 1.5s ease-in-out forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px); /* Start at the vertical line */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Move slightly to the left */
+  }
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Projects Section */
 #projects {
-  background: #22333b; /* Light Cream */
-  color: #eae0d5; /* Almost Black */
+  background: #22333b; /* Dark Blue-Gray */
+  color: #eae0d5; /* Light Beige for text */
+  padding: 50px 0; /* Add vertical spacing */
 }
 
+/* Project Card Styling */
 .project-card {
-  border: 1px solid #5e503f; /* Dark Brown */
-  padding: 10px;
-  border-radius: 5px;
-  background: #eae0d5; /* Beige */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.project-card h4 {
-  color: #22333b; /* Dark Blue-Gray */
+  border: 1px solid #5e503f; /* Dark Brown border */
+  background: #334f5c; /* Subtle Blue-Green for cards */
+  border-radius: 8px;
+  padding: 15px;
+  color: #eae0d5; /* Light Cream for text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
 }
 
 .project-card:hover {
-  background: #5e503f; /* Dark Brown */
-  color: #eae0d5; /* Light Cream */
-  transition: 0.3s;
+  background: #5e503f; /* Dark Brown on hover */
+  color: #eae0d5; /* Light Cream text */
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* Headings in Cards */
+.project-card h4 {
+  color: #eae0d5; /* Light Cream */
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Images in Cards */
+.project-card img {
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 15px;
+  max-width: 100%; /* Ensure image responsiveness */
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.project-card img:hover {
+  transform: scale(1.03); /* Subtle zoom effect on image hover */
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+  background-color: #5e503f; /* Dark Brown */
+}
+
+.carousel-indicators .active {
+  background-color: #eae0d5; /* Light Beige for active indicator */
+}
+
+/* Carousel Control Icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(80%); /* Light Beige for controls */
+}
+
 
 /* Contact Section */
 #contact {
   background: #22333b; /* Dark Blue-Gray */
-  color: #eae0d5; /* Light Cream */
+  color: #22333b; /* Light Cream */
 }
 
 /* Footer */
