@@ -272,3 +272,27 @@ footer a:hover {
   transform: translateY(-2px);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.card-img-top {
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+}
+
