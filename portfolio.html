@@ -9,11 +9,16 @@
   <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
+
   <!-- Header -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Portfolio</a>
+        <a class="navbar-brand" href="#">Portfolio
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-code-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708"/>
+          </svg>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,16 +36,48 @@
     </nav>
   </header>
 
-  <!-- About Section -->
-<section id="about" class="py-5" data-mdb-animation="slideup" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat">
-  <div class="container text-center">
-    <h1 class="mb-3">About Me</h1>
-    <img src="assests/avatar.jpeg" alt="Rachana Sudhakar" class="about-img rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
-    <p class="animated-text">
-      Hello! I'm Rachana Sudhakar, a passionate Computer Science student with a keen interest in web development, data science, and software design. I enjoy solving problems, creating intuitive applications, and continuously learning new technologies. Welcome to my portfolio, where I showcase my journey and projects!
-    </p>
-  </div>
-</section>
+
+
+  <!-- About start -->
+  <section id="about" class="py-5" style="position: relative; height: 500px; background: url('assests/header-avatar.jpeg') no-repeat center center/cover; color: white;">
+    <!-- Content -->
+    <div class="container d-flex flex-column justify-content-end align-items-start h-100 text-left" style="position: relative; z-index: 1; padding: 2rem;">
+      <p class="animated-text" style="max-width: 600px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); font-size: 1.2rem;">
+        <strong>Rachana Sudhakar</strong></p>
+    </div>
+    
+    <!-- Overlay -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+  </section>
+  
+  
+  <!--aBOUT sECTION-->
+  <section id="about" class="py-5" style="background-color: #f9f9f9; color: #333;">
+    <div class="container text-center">
+      <!-- Title -->
+      <h1 class="mb-4" style="font-weight: bold; font-size: 2.5rem;">About Me</h1>
+      
+      <!-- Description -->
+      <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6;">
+        Hello! I'm <strong>Rachana Sudhakar</strong>, a passionate Computer Science student with a keen interest in web development, data science, and software design. I enjoy solving problems, creating intuitive applications, and continuously learning new technologies. Welcome to my portfolio, where I showcase my journey and projects!
+      </p>
+
+      <section id="about-more" class="py-5">
+        <a href="aboutme.html">
+          <div class="more">
+            <h4>Explore My World</h4>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right-square-fill" viewBox="0 0 16 16">
+              <path d="M14 16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2zM5.904 5.197 10 9.293V6.525a.5.5 0 0 1 1 0V10.5a.5.5 0 0 1-.5.5H6.525a.5.5 0 0 1 0-1h2.768L5.197 5.904a.5.5 0 0 1 .707-.707"/>
+            </svg>
+          </div>
+        </a>
+        </section>
+    </div>
+    
+  </section>
+  
+
+
 
   <!-- Education Section -->
 <section id="education" class="py-5 bg-light" data-mdb-animation="slideOutRight" data-mdb-animation-start="onScroll" data-mdb-animation-on-scroll="repeat">
@@ -73,6 +110,9 @@
   </div>
 </section>
 
+
+
+
 <!-- Skills Section -->
 <section id="skills" class="py-5" style="background-color: #22333b; color: #eae0d5;">
   <div class="container">
@@ -80,7 +120,7 @@
     <div class="row text-center">
       <!-- Languages -->
       <div class="col-md-3" data-aos="zoom-in">
-        <div class="card skill-card shadow-sm border-0" style="background-color: #334f5c; color: #eae0d5;">
+        <div class="card skill-card shadow-sm border-0 position-relative" style="background-color: #334f5c; color: #eae0d5;">
           <div class="card-body">
             <h4 class="card-title mb-3">Languages</h4>
             <div class="d-flex flex-wrap justify-content-center">
@@ -91,11 +131,15 @@
               <span class="badge bg-light text-dark m-1">SQL</span>
             </div>
           </div>
+          <!-- Popup Description -->
+          <div class="popup-description">
+            Programming languages I have expertise in, ranging from front-end to back-end development.
+          </div>
         </div>
       </div>
       <!-- Frameworks -->
       <div class="col-md-3" data-aos="zoom-in">
-        <div class="card skill-card shadow-sm border-0" style="background-color: #334f5c; color: #eae0d5;">
+        <div class="card skill-card shadow-sm border-0 position-relative" style="background-color: #334f5c; color: #eae0d5;">
           <div class="card-body">
             <h4 class="card-title mb-3">Frameworks</h4>
             <div class="d-flex flex-wrap justify-content-center">
@@ -105,11 +149,15 @@
               <span class="badge bg-light text-dark m-1">JUnit</span>
             </div>
           </div>
+          <!-- Popup Description -->
+          <div class="popup-description">
+            Frameworks I use for building modern, responsive, and robust applications.
+          </div>
         </div>
       </div>
       <!-- Tools -->
       <div class="col-md-3" data-aos="zoom-in">
-        <div class="card skill-card shadow-sm border-0" style="background-color: #334f5c; color: #eae0d5;">
+        <div class="card skill-card shadow-sm border-0 position-relative" style="background-color: #334f5c; color: #eae0d5;">
           <div class="card-body">
             <h4 class="card-title mb-3">Tools</h4>
             <div class="d-flex flex-wrap justify-content-center">
@@ -121,11 +169,15 @@
               <span class="badge bg-light text-dark m-1">Oracle</span>
             </div>
           </div>
+          <!-- Popup Description -->
+          <div class="popup-description">
+            Tools I use for development, debugging, and deployment.
+          </div>
         </div>
       </div>
       <!-- Knowledge -->
       <div class="col-md-3" data-aos="zoom-in">
-        <div class="card skill-card shadow-sm border-0" style="background-color: #334f5c; color: #eae0d5;">
+        <div class="card skill-card shadow-sm border-0 position-relative" style="background-color: #334f5c; color: #eae0d5;">
           <div class="card-body">
             <h4 class="card-title mb-3">Knowledge</h4>
             <div class="d-flex flex-wrap justify-content-center">
@@ -134,11 +186,16 @@
               <span class="badge bg-light text-dark m-1">OOP</span>
             </div>
           </div>
+          <!-- Popup Description -->
+          <div class="popup-description">
+            Core computer science concepts I am proficient in, essential for solving complex problems.
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
@@ -212,6 +269,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -298,6 +357,77 @@
 </section>
 
 
+
+
+
+<section id="testimonials" class="py-5" style="background-color: #f9f9f9;">
+  <div class="container text-center">
+    <!-- Section Title -->
+    <h2 class="mb-5" style="font-weight: bold; font-size: 2.5rem;">Testimonials</h2>
+
+    <!-- Testimonials Carousel -->
+    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="card border-0 shadow-sm p-4 mx-auto" style="max-width: 800px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+              <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+            </svg>
+            <blockquote class="mb-3" style="font-style: italic; font-size: 1.1rem;">
+              "Rachana is an exceptional developer with a creative mindset. Her dedication to quality is remarkable!"
+            </blockquote>
+            <h5 class="mb-0">John Doe</h5>
+            <small class="text-muted">CEO, TechCorp</small>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-sm p-4 mx-auto" style="max-width: 800px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+              <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+            </svg>
+            <blockquote class="mb-3" style="font-style: italic; font-size: 1.1rem;">
+              "Working with Rachana was a pleasure. Her technical expertise and problem-solving skills are top-notch."
+            </blockquote>
+            <h5 class="mb-0">Jane Smith</h5>
+            <small class="text-muted">Project Manager, Innovate Ltd</small>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+          <div class="card border-0 shadow-sm p-4 mx-auto" style="max-width: 800px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16" style="display: flex;">
+              <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+            </svg>
+            <blockquote class="mb-3" style="font-style: italic; font-size: 1.1rem;">
+              "Her ability to turn ideas into functional and beautiful applications is outstanding."
+            </blockquote>
+            <h5 class="mb-0">Mark Taylor</h5>
+            <small class="text-muted">Founder, StartUp Co.</small>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black;"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="color: black;"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- Contact Section -->
 <section id="contact" class="py-5 bg-light">
   <div class="container text-center">
@@ -308,14 +438,23 @@
     <div class="row justify-content-center mb-4">
       <div class="col-md-4 mb-3">
         <div class="contact-card p-3 border rounded">
+          
           <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+            <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+            <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+          </svg>
           <h5>Email</h5>
+          
           <p><a href="mailto:rachanasudhakar17@gmail.com" class="text-decoration-none">rachanasudhakar17@gmail.com</a></p>
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <div class="contact-card p-3 border rounded">
           <i class="fas fa-phone fa-2x mb-3 text-success"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+          </svg>
           <h5>Phone</h5>
           <p><a href="tel:+1 6176023398" class="text-decoration-none">+1 (617) 602-3398</a></p>
         </div>
@@ -323,8 +462,11 @@
       <div class="col-md-4 mb-3">
         <div class="contact-card p-3 border rounded">
           <i class="fas fa-map-marker-alt fa-2x mb-3 text-danger"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+          </svg>
           <h5>Location</h5>
-          <p>Boston, Massachusetts<br>USA</p>
+          <p>Boston, MA ,USA</p>
         </div>
       </div>
     </div>
@@ -332,26 +474,36 @@
     <!-- Social Links and Resume -->
     <div class="row justify-content-center mb-4">
       <div class="col-md-3">
-        <a href="https://github.com/rachana_1707-S" target="_blank" class="btn btn-dark w-100 mb-2">
+        <a href="https://github.com/rachana1707-S" target="_blank" class="btn btn-dark w-100 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+          </svg>
           <i class="fab fa-github me-2"></i>GitHub
         </a>
       </div>
       <div class="col-md-3">
-        <a href="https://www.linkedin.com/in/rachana-sudhakar/" target="_blank" class="btn btn-primary w-100 mb-2">
+        <a href="https://www.linkedin.com/in/rachanasudhakar/" target="_blank" class="btn btn-primary w-100 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+          </svg>
           <i class="fab fa-linkedin me-2"></i>LinkedIn
         </a>
       </div>
       <div class="col-md-3">
         <a href="assests/rachana_resume_17-12-24.pdf" target="_blank" class="btn btn-secondary w-100 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0"/>
+          </svg>
           <i class="fas fa-file-alt me-2"></i>View Resume
         </a>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <a href="assests/rachana_resume_17-12-24.pdf" download="Rachana_Sudhakar_Resume.pdf" class="btn btn-success w-100">
           <i class="fas fa-download me-2"></i>Download Resume
         </a>
-      </div>
+      </div> -->
     </div>
+
 
     <!-- Contact Form -->
     <div class="row justify-content-center">
@@ -375,6 +527,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 

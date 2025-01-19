@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background:#eae0d5f9; /* Light Cream */
+  background:#dfd4bff9; /* Light Cream */
   color: #0a0908; /* Almost Black */
   background-size: cover;
 }
@@ -296,3 +296,79 @@ footer a:hover {
   background-color: #f8f9fa;
 }
 
+
+  .skill-card {
+    position: relative;
+  }
+  .popup-description {
+    position: absolute;
+    bottom: 110%; /* Adjust to control vertical position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #eae0d5;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+  }
+  .popup-description::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  }
+  .skill-card:hover .popup-description {
+    display: block;
+  }
+
+
+
+  /* Container for the 'Explore My World' section */
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  width: 200px;
+  background-color: #f0f0f0; /* Light background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  cursor: pointer; /* Pointer cursor for clickable feel */
+  text-decoration: none; /* Remove link underline */
+}
+
+.more-container{
+  background-color: white;
+}
+
+.more:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Increase shadow depth */
+}
+
+.more h4 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333; /* Darker text for readability */
+}
+
+.more svg {
+  margin-top: 10px;
+  fill: #007bff; /* Blue color for the icon */
+  transition: fill 0.3s ease; /* Smooth color change */
+}
+
+.more:hover svg {
+  fill: #0056b3; /* Darker blue on hover */
+}
