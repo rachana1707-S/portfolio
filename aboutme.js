@@ -1,4 +1,4 @@
-// Slideshow functionality
+// Slideshow functionality (for a general slideshow)
 const slides = document.querySelector('.slides');
 const slideImages = document.querySelectorAll('.slide');
 const prevBtn = document.querySelector('.prev');
@@ -29,33 +29,34 @@ setInterval(() => {
 }, 5000);
 
 
-// Milestone Slider
+// Milestone Slider (for milestones section)
 document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll('.milestone-slide');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let currentIndex = 0;
+  const milestoneSlides = document.querySelectorAll('.milestone-slide');
+  const prevBtnMilestone = document.querySelector('.milestone-btn.prev');
+  const nextBtnMilestone = document.querySelector('.milestone-btn.next');
+  let currentMilestoneIndex = 0;
 
-  function showSlide(index) {
-      slides.forEach((slide, i) => {
+  function showMilestoneSlide(index) {
+      milestoneSlides.forEach((slide, i) => {
           slide.style.transform = `translateX(${(i - index) * 100}%)`;
       });
   }
 
-  prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
+  prevBtnMilestone.addEventListener('click', () => {
+      currentMilestoneIndex = (currentMilestoneIndex - 1 + milestoneSlides.length) % milestoneSlides.length;
+      showMilestoneSlide(currentMilestoneIndex);
   });
 
-  nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+  nextBtnMilestone.addEventListener('click', () => {
+      currentMilestoneIndex = (currentMilestoneIndex + 1) % milestoneSlides.length;
+      showMilestoneSlide(currentMilestoneIndex);
   });
 
-  showSlide(currentIndex);
+  showMilestoneSlide(currentMilestoneIndex);
 });
 
-// Lessons Learned Animation on Scroll
+
+// Lessons Learned Animation on Scroll (for animation trigger on scroll)
 document.addEventListener("DOMContentLoaded", () => {
     const lessonItems = document.querySelectorAll('.lesson');
 

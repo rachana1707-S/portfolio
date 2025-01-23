@@ -217,7 +217,12 @@ nav ul li a:hover {
 
 /* Slider Controls */
 .milestone-controls {
-  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
 }
 
 .milestone-btn {
@@ -228,13 +233,31 @@ nav ul li a:hover {
   width: 40px;
   height: 40px;
   font-size: 1.2rem;
-  margin: 0 10px;
   cursor: pointer;
   transition: background 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.milestone-btn i {
+  margin: 0; /* Ensure the icon is centered properly */
 }
 
 .milestone-btn:hover {
   background: #357ab7;
+}
+
+/* Ensuring buttons are visible */
+.milestone-btn.prev, .milestone-btn.next {
+  z-index: 1; /* Ensure buttons are on top */
+}
+
+/* Add padding to ensure space between buttons and milestone cards */
+.milestone-slider {
+  position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 
