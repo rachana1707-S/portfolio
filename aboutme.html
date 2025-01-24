@@ -12,18 +12,31 @@
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <div class="logo">My Journey</div>
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              Portfolio
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-code-fill" viewBox="0 0 16 16">
+                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708"/>
+              </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+      
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#milestones">Milestones</a></li>
-                <li><a href="#lessons">Lessons</a></li>
-                <li><a href="#goals">Goals</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#fuel">Fuel</a></li>
-                <li><a href="#timeline">Timeline</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#milestones">Milestones</a></li>
+              <li><a href="#lessons">Lessons</a></li>
+              <li><a href="#goals">Goals</a></li>
+              <li><a href="#fuel">Fuel</a></li>
             </ul>
+          </div>
         </nav>
-    </header>
+      </header>
+      
+      
 
     <!-- Image Slideshow -->
     <section class="slideshow">
@@ -78,64 +91,61 @@
   <section id="milestones" class="section milestones">
     <h2><i class="fas fa-medal"></i> Milestones That Matter</h2>
     <div class="milestone-slider">
-        <div class="milestone-slide active">
-            <div class="milestone">
-                <div class="milestone-icon">
-                    <i class="fas fa-award"></i>
-                </div>
-                <div class="milestone-content">
-                    <h3>Outstanding Student Award</h3>
-                    <p>Recognized for exceptional academic excellence and dedication, earning the prestigious Outstanding Student Award in the Computer Science department.</p>
-                    <span class="milestone-date">2024</span>
-                </div>
-            </div>
+      <div class="milestone-slide active">
+        <div class="milestone">
+          <div class="milestone-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="milestone-content">
+            <h3>Outstanding Student Award</h3>
+            <p>Recognized for exceptional academic excellence and dedication, earning the prestigious Outstanding Student Award in the Computer Science department.</p>
+            <span class="milestone-date">2024</span>
+          </div>
         </div>
-        <div class="milestone-slide">
-            <div class="milestone">
-                <div class="milestone-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="milestone-content">
-                    <h3>Academic Excellence Awardee</h3>
-                    <p>I earned the gold medal for achieving the highest score in my bachelor's program, showcasing my dedication, hard work, and consistent academic performance.</p>
-                    <span class="milestone-date">2023</span>
-                </div>
-            </div>
+      </div>
+      <div class="milestone-slide">
+        <div class="milestone">
+          <div class="milestone-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="milestone-content">
+            <h3>Academic Excellence Awardee</h3>
+            <p>I earned the gold medal for achieving the highest score in my bachelor's program, showcasing my dedication, hard work, and consistent academic performance.</p>
+            <span class="milestone-date">2024</span>
+          </div>
         </div>
-        <div class="milestone-slide">
-            <div class="milestone">
-                <div class="milestone-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="milestone-content">
-                    <h3>Graduated with Honors</h3>
-                    <p>Completed a degree with honors, showcasing consistent dedication and academic excellence throughout the program.</p>
-                    <span class="milestone-date">2023</span>
-                </div>
-            </div>
+      </div>
+      <div class="milestone-slide">
+        <div class="milestone">
+          <div class="milestone-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="milestone-content">
+            <h3>Graduated with Honors</h3>
+            <p>Completed a degree with honors, showcasing consistent dedication and academic excellence throughout the program.</p>
+            <span class="milestone-date">2024</span>
+          </div>
         </div>
-        <div class="milestone-slide">
-            <div class="milestone">
-                <div class="milestone-icon">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <div class="milestone-content">
-                    <h3>Successful Internship</h3>
-                    <p>Completed a successful internship, gaining hands-on experience in software development and project management.</p>
-                    <span class="milestone-date">2022</span>
-                </div>
-            </div>
+      </div>
+      <div class="milestone-slide">
+        <div class="milestone">
+          <div class="milestone-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="milestone-content">
+            <h3>Successful Internship</h3>
+            <p>Completed a successful internship, gaining hands-on experience in software development and project management.</p>
+            <span class="milestone-date">2023</span>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="milestone-controls">
-        <button class="milestone-btn prev"><i class="fas fa-chevron-left"></i></button>
-        <button class="milestone-btn next"><i class="fas fa-chevron-right"></i></button>
-    </div>
-</section>
+  </section>
+  
 
 
 
-<section id="lessons-learned" class="section lessons">
+<section id="lessons" class="section lessons">
     <h2><i class="fas fa-lightbulb"></i> What This Work Has Taught Me</h2>
     <div class="lessons-timeline">
         <div class="lesson-item">
@@ -185,7 +195,7 @@
 
 
 
-<section id="where-im-headed" class="section headed">
+<section id="goals" class="section headed">
     <h2><i class="fas fa-route"></i> Where I’m Headed</h2>
     <div class="roadmap">
         <div class="roadmap-step">
@@ -221,7 +231,7 @@
 
 
 
-<section id="fuel-behind-journey" class="section fuel">
+<section id="fuel" class="section fuel">
     <h2><i class="fas fa-fire-alt"></i> The Fuel Behind My Journey</h2>
     <p class="intro-text">
         These activities ignite my passion, keep me motivated, and help me grow both personally and professionally.
@@ -263,21 +273,9 @@
 </section>
 
 
-    <section id="timeline" class="section">
-        <h2><i class="fas fa-calendar"></i> From Dreams to Code</h2>
-        <p>A timeline highlighting key events and milestones in my journey.</p>
-    </section>
-
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 My Journey. All Rights Reserved.</p>
-            <ul class="social-links">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-    </footer>
+  <footer class="py-3 bg-dark text-center text-white">
+    &copy; 2024 Rachana Sudhakar. All rights reserved.
+  </footer>
 </body>
 </html>

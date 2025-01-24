@@ -12,6 +12,20 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background-size: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+}
+
+header .navbar-brand {
+  color: #eae0d5; /* Light Cream */
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem; /* Adjusted font size for "Portfolio" */
+  text-decoration: none; /* Removes underline */
+}
+
+header .navbar-brand svg {
+  margin-left: 8px;
 }
 
 nav {
@@ -19,11 +33,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  height: 20px;
 }
 
 nav ul {
@@ -34,13 +44,35 @@ nav ul {
 
 nav ul li a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none; /* Removes underline */
   transition: color 0.3s;
+  font-size: 1.1rem; /* Increase font size for readability */
 }
 
 nav ul li a:hover {
   color: #00bcd4;
 }
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+}
+
 
 /* Slideshow */
 .slideshow {
@@ -215,43 +247,7 @@ nav ul li a:hover {
   font-style: italic;
 }
 
-/* Slider Controls */
-.milestone-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
 
-.milestone-btn {
-  background: #4a90e2;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.3s;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.milestone-btn i {
-  margin: 0; /* Ensure the icon is centered properly */
-}
-
-.milestone-btn:hover {
-  background: #357ab7;
-}
-
-/* Ensuring buttons are visible */
-.milestone-btn.prev, .milestone-btn.next {
-  z-index: 1; /* Ensure buttons are on top */
-}
 
 /* Add padding to ensure space between buttons and milestone cards */
 .milestone-slider {
