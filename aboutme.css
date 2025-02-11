@@ -7,21 +7,23 @@ body {
 
 /* Header & Navigation Bar */
 header {
-  background: #333;
-  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: #22333b; /* Dark Blue-Gray */
   position: sticky;
   top: 0;
   z-index: 1000;
   background-size: cover;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
 }
 
 header .navbar-brand {
   color: #eae0d5; /* Light Cream */
-  display: flex;
+  
   align-items: center;
-  font-size: 1.5rem; /* Adjusted font size for "Portfolio" */
+  font-size: 1.3rem; /* Adjusted font size for "Portfolio" */
   text-decoration: none; /* Removes underline */
+  position: relative;
+  padding-top: 10px; /* Adjust the value as needed */
+  margin-left: 20px;
 }
 
 header .navbar-brand svg {
