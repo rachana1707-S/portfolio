@@ -1,369 +1,721 @@
-# 🌟 Rachana Sudhakar - Portfolio Website
+# 🌟 Rachana Sudhakar - Portfolio
 
-A modern, responsive portfolio website showcasing my journey as a Computer Science graduate student and full-stack developer. Built with cutting-edge web technologies and featuring dynamic animations, glass morphism design, and contextual floating icons.
+A modern, responsive software engineering portfolio showcasing my work across **full-stack development, AI, data engineering, robotics, and real-time systems**.
 
-## 🚀 Live Demo
+The portfolio brings together my professional experience, technical projects, skills, education, and personal journey in an interactive and visually engaging website.
 
-[View Live Portfolio](https://rachana1707-s.github.io/portfolio/
-) <!-- Replace with your actual URL -->
+## 🚀 Live Portfolio
 
-## 📸 Screenshots
-
-### Main Portfolio
-![Portfolio Homepage](screenshots/portfolio-main.png)
-*Clean, professional homepage with dynamic hero section*
-
-### About Me Page
-![About Me Page](screenshots/about-me1.png) ![About Me Page](screenshots/about-me2.png)
-*Interactive timeline showcasing personal journey and achievements*
-
-### Mobile Responsive
-![Mobile View](screenshots/mobile-view1.png) ![Mobile View](screenshots/mobile-view2.png)
-*Fully responsive design optimized for all devices*
-
-## ✨ Features
-
-### 🎨 Design & UI/UX
-- **Modern Glass Morphism**: Semi-transparent cards with backdrop blur effects
-- **Dynamic Floating Icons**: Contextual animated icons throughout the background
-- **Responsive Design**: Mobile-first approach with Bootstrap 5 integration
-- **Professional Color Scheme**: Carefully curated palette with CSS custom properties
-- **Smooth Animations**: CSS animations and transitions for enhanced user experience
-
-### 📱 Interactive Elements
-- **Auto-rotating Carousels**: Projects and testimonials with manual navigation
-- **Timeline Animations**: Educational journey with alternating card layout
-- **Hover Effects**: Enhanced interactivity with transform and shadow effects
-- **Loading Animations**: Professional loading screens with branded spinners
-- **Smooth Scrolling**: Navigation with anchor-based smooth scrolling
-
-### 🛠️ Technical Features
-- **Clean Code Architecture**: Separated HTML, CSS, and JavaScript files
-- **Performance Optimized**: Efficient asset loading and animation management
-- **SEO Friendly**: Semantic HTML structure with proper meta tags
-- **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
-- **Cross-browser Compatible**: Tested across modern browsers
-
-## 🏗️ Project Structure
-
-```
-portfolio/
-├── index.html              # Main portfolio page
-├── aboutme.html            # Personal journey page
-├── portfolio.css           # Main portfolio styles
-├── aboutme.css            # About page styles
-├── README.md              # Project documentation
-├── screenshots/           # Portfolio screenshots
-│   ├── portfolio-main.png
-│   ├── about-me.png
-│   └── mobile-view.png
-└── assets/               # Media and resources
-    ├── exp/              # Experience certificates
-    │   ├── tcs.pdf
-    │   ├── tcs.webp
-    │   ├── bolt.pdf
-    │   └── bolt.jpeg
-    ├── project1.webp     # Project images
-    ├── project2.webp
-    ├── project3.jpg
-    ├── project4.webp
-    ├── project5.jpeg
-    ├── project6.webp
-    ├── neu_logo.png       # University logos
-    ├── dyp_logo.jpeg
-    ├── nhss_logo.png
-    ├── SoftwareEngineer.pdf # Resume
-    └── aboutme/          # Personal photos
-        ├── 20240922_145340.jpg
-        ├── IMG-20240411-WA0017.jpg
-        ├── IMG-20240410-WA0044.jpg
-        ├── walks.jpg
-        ├── dances.jpeg
-        ├── coding.jpg
-        └── webb.jpg
-```
-
-## 🎯 Sections Overview
-
-### 🏠 Main Portfolio (`index.html`)
-1. **Hero Section**: Dynamic introduction with animated icons
-2. **About**: Brief overview with link to detailed about page
-3. **Education**: Timeline showcasing academic journey
-4. **Skills**: Technical expertise organized by categories
-5. **Experience**: Professional internships with achievements
-6. **Projects**: Featured projects with GitHub links
-7. **Testimonials**: Professional recommendations
-8. **Contact**: Multiple contact methods with working form
-
-### 👤 About Me Page (`aboutme.html`)
-1. **Photo Slideshow**: Personal images with navigation
-2. **What Defines Me**: Personal qualities and characteristics
-3. **Milestones**: Academic and professional achievements
-4. **Lessons Learned**: Growth through experiences
-5. **Future Goals**: Career aspirations and roadmap
-6. **Personal Fuel**: Hobbies and interests
-
-## 🛠️ Technologies Used
-
-### Frontend Technologies
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Advanced styling with custom properties
-- **JavaScript (ES6+)**: Interactive functionality
-- **Bootstrap 5**: Responsive grid and components
-- **Font Awesome 6**: Professional icon library
-
-### Design Techniques
-- **CSS Grid & Flexbox**: Modern layout systems
-- **CSS Animations**: Keyframe animations and transitions
-- **Glass Morphism**: Backdrop-filter and transparency effects
-- **Responsive Design**: Mobile-first media queries
-- **CSS Custom Properties**: Maintainable color system
-
-### Performance & Optimization
-- **Lazy Loading**: Efficient image and asset loading
-- **CSS Optimization**: Minimal and organized stylesheets
-- **Animation Performance**: Hardware-accelerated transforms
-- **Asset Optimization**: Compressed images and fonts
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- Text editor (VS Code, Sublime Text, etc.)
-- Basic knowledge of HTML, CSS, and JavaScript
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/rachana1707-S/portfolio.git
-   cd portfolio
-   ```
-
-2. **Open in your preferred editor**
-   ```bash
-   code .  # For VS Code
-   ```
-
-3. **Launch the website**
-   - Open `index.html` in your browser, or
-   - Use a local server (recommended):
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   
-   # Using PHP
-   php -S localhost:8000
-   ```
-
-4. **View the portfolio**
-   - Navigate to `http://localhost:8000` in your browser
-
-## 🎨 Customization Guide
-
-### Updating Personal Information
-
-1. **Basic Info** (`index.html`):
-   ```html
-   <!-- Update hero section -->
-   <h1 class="hero-title">Your Name</h1>
-   <p class="hero-subtitle">Your Title</p>
-   ```
-
-2. **Contact Information**:
-   ```html
-   <!-- Update contact details -->
-   <a href="mailto:your-email@example.com">your-email@example.com</a>
-   <a href="tel:+1234567890">+1 (234) 567-890</a>
-   ```
-
-3. **Social Links**:
-   ```html
-   <!-- Update social media links -->
-   <a href="https://github.com/your-username" target="_blank">
-   <a href="https://linkedin.com/in/your-profile" target="_blank">
-   ```
-
-### Color Customization
-
-Update the CSS custom properties in both CSS files:
-
-```css
-:root {
-  --dark-navy: #your-color;        /* Primary dark background */
-  --teal-blue: #your-color;        /* Secondary dark */
-  --warm-brown: #your-color;       /* Accent color */
-  --cream: #your-color;            /* Light text/background */
-  --warm-beige: #your-color;       /* Hover states */
-  /* ... other colors */
-}
-```
-
-### Adding New Sections
-
-1. **HTML Structure**:
-   ```html
-   <section id="new-section" class="section">
-     <div class="section-floating-icons" id="newSectionFloatingIcons"></div>
-     <div class="container">
-       <h2 class="section-title">Section Title</h2>
-       <!-- Your content here -->
-     </div>
-   </section>
-   ```
-
-2. **Navigation Link**:
-   ```html
-   <li class="nav-item">
-     <a class="nav-link" href="#new-section">New Section</a>
-   </li>
-   ```
-
-3. **Floating Icons** (JavaScript):
-   ```javascript
-   // Add to iconSets object
-   newSection: [
-     'fas fa-icon1', 'fas fa-icon2', 'fas fa-icon3'
-   ]
-   ```
-
-## 📝 Content Management
-
-### Adding New Projects
-
-1. **Update the projects carousel** in `index.html`:
-   ```html
-   <div class="col-lg-4 col-md-6">
-     <div class="project-card">
-       <img src="assets/your-project.webp" alt="Project Name" class="w-100 project-image">
-       <div class="project-content">
-         <h4 class="project-title">Your Project Name</h4>
-         <p class="project-description">Project description...</p>
-         <a href="https://github.com/your-username/project" target="_blank" class="btn-github">
-           <i class="fab fa-github me-2"></i>View on GitHub
-         </a>
-       </div>
-     </div>
-   </div>
-   ```
-
-### Adding Experience
-
-1. **Update experience section**:
-   ```html
-   <div class="col-lg-6">
-     <div class="card experience-card h-100">
-       <img src="assets/exp/company-logo.webp" alt="Company Name" class="card-img-top experience-logo">
-       <div class="card-body p-4">
-         <h4 class="experience-title">Your Position</h4>
-         <h5 class="experience-company">Company Name</h5>
-         <p class="experience-duration"><strong>Duration:</strong> Start - End</p>
-         <!-- Add achievements and technologies -->
-       </div>
-     </div>
-   </div>
-   ```
-
-## 🔧 Performance Optimization
-
-### Image Optimization
-- **WebP Format**: Use WebP images for better compression
-- **Appropriate Sizing**: Resize images to display dimensions
-- **Lazy Loading**: Implement for better page load times
-
-### CSS Optimization
-- **Minimize CSS**: Remove unused styles
-- **Critical CSS**: Inline critical styles for faster rendering
-- **CSS Sprites**: Combine small icons into sprite sheets
-
-### JavaScript Optimization
-- **Event Delegation**: Use efficient event handling
-- **Animation Performance**: Use `transform` and `opacity` for animations
-- **Memory Management**: Properly clean up event listeners
-
-## 🌐 Deployment Options
-
-### GitHub Pages
-1. **Push to GitHub**:
-   ```bash
-   git add .
-   git commit -m "Initial portfolio commit"
-   git push origin main
-   ```
-
-2. **Enable GitHub Pages**:
-   - Go to repository Settings
-   - Navigate to Pages section
-   - Select source branch (main)
-   - Your site will be available at `https://username.github.io/repository-name`
-
-### Netlify
-1. **Deploy from Git**:
-   - Connect your GitHub repository
-   - Build command: (leave empty)
-   - Publish directory: `.` (root)
-
-### Vercel
-1. **Deploy with Vercel**:
-   ```bash
-   npm i -g vercel
-   vercel
-   ```
-
-### Traditional Hosting
-1. **Upload files** via FTP/SFTP to your hosting provider
-2. **Ensure** `index.html` is in the root directory
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/rachana1707-S/portfolio/issues).
-
-### How to Contribute
-
-1. **Fork the Project**
-2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-**Rachana Sudhakar** - [rachanasudhakar17@gmail.com](mailto:rachanasudhakar17@gmail.com)
-
-- 🌐 **Portfolio**: [https://your-portfolio-url.com](https://your-portfolio-url.com)
-- 💼 **LinkedIn**: [https://linkedin.com/in/rachanasudhakar](https://linkedin.com/in/rachanasudhakar)
-- 🐱 **GitHub**: [https://github.com/rachana1707-S](https://github.com/rachana1707-S)
-- 📱 **Phone**: +1 (617) 602-3398
-- 📍 **Location**: Boston, MA, USA
-
-## 🙏 Acknowledgments
-
-- **Bootstrap Team** for the excellent CSS framework
-- **Font Awesome** for the comprehensive icon library
-- **Unsplash/Pexels** for high-quality stock images
-- **Google Fonts** for beautiful typography options
-- **MDN Web Docs** for excellent web development resources
-
-## 🔮 Future Enhancements
-
-- [ ] **Dark Mode Toggle**: Implement theme switching functionality
-- [ ] **Blog Section**: Add a blog for sharing technical articles
-- [ ] **Advanced Animations**: Implement more sophisticated CSS animations
-- [ ] **CMS Integration**: Add headless CMS for easier content management
-- [ ] **Multi-language Support**: Implement internationalization
-- [ ] **Analytics**: Add Google Analytics for visitor insights
-- [ ] **PWA Features**: Make the portfolio a Progressive Web App
-- [ ] **Advanced SEO**: Implement structured data and meta optimization
+🌐 **[View Live Portfolio](https://rachana1707-s.github.io/portfolio/)**
 
 ---
 
-⭐ **If you found this portfolio helpful, please give it a star!** ⭐
+## 📸 Portfolio Preview
 
-*Built with ❤️ by Rachana Sudhakar*
+### 🏠 Home
+
+![Portfolio Home](screenshots/portfolio-home.png)
+
+A modern landing page introducing my background, technical interests, experience, and featured work.
+
+### 🚀 Featured Projects
+
+![Featured Projects](screenshots/portfolio-projects.png)
+
+A collection of projects across **AI, full-stack development, developer tools, data engineering, and software engineering**.
+
+### 💼 Professional Experience
+
+![Professional Experience](screenshots/portfolio-experience.png)
+
+Highlights from my software engineering experience, including robotics software development and full-stack engineering.
+
+### 🧭 My Journey
+
+![My Journey](screenshots/about-journey.png)
+
+An interactive page showing how I approach engineering, the skills I have developed, project stories, milestones, and interests beyond coding.
+
+### 📱 Mobile Experience
+
+<p align="center">
+  <img src="screenshots/mobile-view.png" alt="Portfolio Mobile View" width="320">
+</p>
+
+The portfolio is fully responsive across desktop, tablet, and mobile devices.
+
+---
+
+## ✨ Highlights
+
+- 🎨 Modern responsive user interface
+- 💻 Full-stack, AI, data engineering, and robotics projects
+- 🔎 Interactive project filtering
+- 🧠 Visual skills and project stories
+- 💼 Professional software engineering experience
+- 🎓 Education and certifications
+- 🧭 Interactive personal journey page
+- 📱 Mobile-responsive layouts
+- ✨ Scroll animations and hover interactions
+- ♿ Keyboard-friendly interactive elements
+- ⚡ Lightweight static deployment with GitHub Pages
+
+---
+
+## 👩‍💻 About the Portfolio
+
+This portfolio represents the different areas of software engineering I enjoy working across:
+
+- Full-stack software engineering
+- Backend APIs and databases
+- Artificial intelligence and computer vision
+- Data engineering and ETL pipelines
+- Real-time systems
+- Robotics software
+- Human-centered interfaces
+
+Instead of only listing technologies, the portfolio focuses on showing how I have applied them through **real projects and professional experience**.
+
+---
+
+# ⭐ Featured Projects
+
+## 🤖 AI Code Review Assistant
+
+An AI-powered developer tool that analyzes source code and identifies syntax, quality, security, and maintainability issues.
+
+### Key Features
+
+- React frontend with Monaco Editor
+- FastAPI backend
+- PostgreSQL review history
+- JWT authentication
+- Python AST analysis
+- Pylint and Flake8 integration
+- CodeBERT-assisted analysis
+- Issue severity filtering
+- Line-level issue highlighting
+
+🔗 **[View Repository](https://github.com/rachana1707-S/AI-Code-Review-Assistant)**
+
+---
+
+## 🍽️ AI Food Calorie Estimator
+
+A computer vision application that recognizes food from images and estimates calories and nutritional information.
+
+### Key Features
+
+- EfficientNetV2B0
+- Food-101 dataset
+- Transfer learning
+- FastAPI backend
+- React frontend
+- USDA FoodData Central integration
+- Nutrition estimation
+
+🔗 **[View Repository](https://github.com/rachana1707-S/ai-food-calorie-estimator)**
+
+---
+
+## 🌊 Ocean Sensor Data Pipeline
+
+An end-to-end data engineering pipeline that collects, processes, stores, and visualizes live NOAA ocean sensor data.
+
+### Key Features
+
+- NOAA CO-OPS API ingestion
+- Automated data collection
+- pandas-based cleaning and transformation
+- Data validation
+- Automated quality scoring
+- PostgreSQL storage
+- APScheduler
+- Streamlit dashboard
+- Plotly visualizations
+- Docker Compose
+
+🔗 **[View Repository](https://github.com/rachana1707-S/ocean-pipeline)**
+
+---
+
+## 🎨 Sentiment Aura
+
+A real-time AI sentiment visualization application that transforms speech and sentiment into dynamic visual experiences.
+
+### Key Features
+
+- Speech-to-text processing
+- LLM-based sentiment analysis
+- FastAPI
+- React
+- WebSockets
+- Deepgram
+- Groq
+- p5.js visualization
+- Real-time communication
+
+🔗 **[View Repository](https://github.com/rachana1707-S/Sentiment-Aura)**
+
+---
+
+## 🍴 FoodSocial
+
+A full-stack social food discovery platform designed around restaurant discovery and sharing food experiences.
+
+### Key Features
+
+- Restaurant discovery
+- User authentication
+- Reviews and social interactions
+- User collections
+- Location-based features
+- Responsive interface
+- Backend API integration
+- Database-backed user data
+
+🔗 **[View Repository](https://github.com/rachana1707-S/FoodSocial)**
+
+---
+
+## 🖼️ Image Processing Application
+
+A Java-based image processing application supporting multiple image manipulation and enhancement operations.
+
+### Key Features
+
+- MVC architecture
+- GUI and CLI interfaces
+- Image filters
+- Histograms
+- Color correction
+- Image transformations
+- Haar wavelet compression
+- Object-oriented design
+
+🔗 **[View Repository](https://github.com/rachana1707-S/ImageProcessing)**
+
+---
+
+# 💼 Professional Experience
+
+## 🤖 Robotics Software Engineering Co-op
+
+### Orpheus Ocean
+
+Worked across robotics software, full-stack development, real-time telemetry, simulation, operator interfaces, and internal engineering infrastructure.
+
+### Technologies
+
+`React` `TypeScript` `Python` `FastAPI` `WebSockets` `ROS2` `Gazebo` `NVIDIA Jetson` `Docker`
+
+### Highlights
+
+- Built real-time interfaces for monitoring and controlling autonomous underwater vehicles
+- Worked with ROS2 publisher/subscriber architecture
+- Developed operator-facing interfaces for telemetry and vehicle control
+- Improved real-time telemetry communication
+- Tested systems through Gazebo simulations and live AUV deployments
+- Worked with Intel NUC and LattePanda systems
+- Supported internal engineering infrastructure and NAS-based workflows
+
+---
+
+## 💻 Full Stack Developer Intern
+
+### Tata Consultancy Services
+
+Worked on responsive applications, real-time sports systems, backend services, and database-backed workflows.
+
+### Technologies
+
+`Java` `Spring Boot` `React` `SQL` `REST APIs`
+
+### Highlights
+
+- Developed responsive web interfaces
+- Worked on a real-time IPL score tracking system
+- Built database-backed application functionality
+- Collaborated with a database development team
+- Worked on enterprise data processing workflows
+
+---
+
+# 🛠️ Technical Skills
+
+## Languages
+
+`Python` `Java` `JavaScript` `TypeScript` `SQL` `HTML` `CSS`
+
+## Frontend
+
+`React` `Bootstrap` `CSS Grid` `Flexbox` `Responsive Design`
+
+## Backend
+
+`FastAPI` `Spring Boot` `Node.js` `REST APIs`
+
+## Databases
+
+`PostgreSQL` `MySQL` `SQLAlchemy`
+
+## AI / Machine Learning
+
+`TensorFlow` `PyTorch` `Hugging Face` `CodeBERT` `Computer Vision` `NLP`
+
+## Data Engineering
+
+`pandas` `NumPy` `ETL Pipelines` `Data Validation` `REST APIs`
+
+## Robotics & Real-Time Systems
+
+`ROS2` `Gazebo` `WebSockets` `Telemetry`
+
+## Developer Tools
+
+`Docker` `Git` `GitHub` `Linux`
+
+---
+
+# 🏗️ Project Structure
+
+```text
+portfolio/
+│
+├── index.html
+├── aboutme.html
+│
+├── portfolio.css
+├── aboutme.css
+│
+├── portfolio.js
+├── aboutme.js
+│
+├── README.md
+│
+├── screenshots/
+│   ├── portfolio-home.png
+│   ├── portfolio-projects.png
+│   ├── portfolio-experience.png
+│   ├── about-journey.png
+│   └── mobile-view.png
+│
+└── assests/
+    ├── aboutme/
+    ├── exp/
+    ├── journey/
+    ├── project images
+    ├── university logos
+    └── resume
+```
+
+> **Note:** The project currently uses the folder name `assests`. If it is renamed to `assets`, all corresponding HTML and CSS paths must also be updated.
+
+---
+
+# 🧩 Portfolio Sections
+
+## 🏠 Home
+
+The hero section introduces who I am and the areas of software engineering I work across.
+
+It provides quick access to:
+
+- Projects
+- Professional experience
+- My Journey
+- Resume
+- Contact information
+
+---
+
+## 👤 About
+
+Provides a short introduction to my background, interests, and engineering approach.
+
+A separate **My Journey** page provides a deeper look into my experiences and growth.
+
+---
+
+## 💼 Experience
+
+Highlights my professional experience in:
+
+- Robotics software engineering
+- Full-stack development
+- Real-time systems
+- Backend development
+- Software infrastructure
+
+---
+
+## 🚀 Projects
+
+Projects can be explored using interactive category filters.
+
+Categories include:
+
+- All
+- AI / ML
+- Full-Stack
+- Developer Tools
+- Data Engineering
+
+---
+
+## 🛠️ Skills
+
+Technical skills are organized by area to make the portfolio easy to scan.
+
+---
+
+## 🎓 Education
+
+Highlights my academic background, including my graduate studies in Computer Science at Northeastern University.
+
+---
+
+## 📜 Certifications
+
+Displays professional and technical certifications completed throughout my academic and professional journey.
+
+---
+
+## 📬 Contact
+
+Provides quick ways for recruiters, engineers, and collaborators to connect with me.
+
+---
+
+# 🧭 My Journey Page
+
+The `aboutme.html` page provides a more personal and visual view of my engineering journey.
+
+It highlights:
+
+- Systems thinking
+- Methodical debugging
+- Human-centered design
+- Testing and reliability
+- Adaptability
+- Team-oriented development
+- Technical skills
+- Project stories
+- Career milestones
+- Interests beyond coding
+
+Interactive elements include:
+
+- Skill filtering
+- Expandable project stories
+- Timeline highlighting
+- Scroll reveal animations
+- Responsive bento-style layouts
+
+---
+
+# 🎨 Design System
+
+The portfolio uses a consistent custom color palette.
+
+```css
+:root {
+  --dark-navy: #22333b;
+  --teal-blue: #334f5c;
+  --warm-brown: #5e503f;
+  --cream: #eae0d5;
+  --warm-beige: #c6ac8f;
+}
+```
+
+### UI Elements
+
+The design includes:
+
+- Rounded cards
+- Soft shadows
+- Gradient accents
+- Pill-shaped technology tags
+- Hover interactions
+- Scroll reveal animations
+- CSS Grid
+- Flexbox
+- Responsive layouts
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+You only need:
+
+- A modern web browser
+- Git
+- A code editor such as VS Code
+
+---
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/rachana1707-S/portfolio.git
+cd portfolio
+```
+
+---
+
+## 2. Open the Project
+
+If you use VS Code:
+
+```bash
+code .
+```
+
+---
+
+## 3. Start a Local Server
+
+Using Python:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+You can also use the **Live Server** extension in VS Code.
+
+---
+
+# 🌐 Deployment
+
+The portfolio is deployed using **GitHub Pages**.
+
+🌐 **[Live Website](https://rachana1707-s.github.io/portfolio/)**
+
+After making changes:
+
+```bash
+git add .
+git commit -m "feat: update portfolio"
+git push origin main
+```
+
+GitHub Pages will deploy the latest version from the configured branch.
+
+---
+
+# 📷 README Images Required
+
+Create a `screenshots` folder in the root of the repository:
+
+```bash
+mkdir -p screenshots
+```
+
+Your folder should contain:
+
+```text
+screenshots/
+├── portfolio-home.png
+├── portfolio-projects.png
+├── portfolio-experience.png
+├── about-journey.png
+└── mobile-view.png
+```
+
+## 1. `portfolio-home.png`
+
+Take a desktop screenshot of the **top of your portfolio**.
+
+It should include:
+
+- Navigation bar
+- Hero section
+- Your name
+- Software engineering introduction
+- Main CTA buttons
+- Some of the next section if possible
+
+Recommended size:
+
+```text
+1440 × 900
+```
+
+---
+
+## 2. `portfolio-projects.png`
+
+Take a screenshot of the **Projects section**.
+
+Make sure it shows:
+
+- Projects heading
+- Category/filter buttons
+- At least 3 project cards
+- Project images
+- Technology tags
+
+Recommended size:
+
+```text
+1440 × 900
+```
+
+---
+
+## 3. `portfolio-experience.png`
+
+Take a screenshot of your **Experience section**.
+
+Try to show both:
+
+```text
+Orpheus Ocean
+Tata Consultancy Services
+```
+
+Recommended size:
+
+```text
+1440 × 900
+```
+
+---
+
+## 4. `about-journey.png`
+
+Use your redesigned **My Journey** page.
+
+The best screenshot would be either:
+
+```text
+How I Work
+```
+
+or:
+
+```text
+Project Stories
+```
+
+The **How I Work bento section** would be my first choice because it makes the portfolio look more unique.
+
+Recommended size:
+
+```text
+1440 × 900
+```
+
+---
+
+## 5. `mobile-view.png`
+
+Open Chrome DevTools:
+
+```text
+Right Click
+→ Inspect
+→ Toggle Device Toolbar
+```
+
+Use approximately:
+
+```text
+390 × 844
+```
+
+Then take a screenshot showing:
+
+- Navigation
+- Hero
+- Main content
+- Responsive cards
+
+This screenshot is intentionally displayed smaller in the README.
+
+---
+
+# 📸 Recommended Screenshot Folder
+
+After adding the images:
+
+```text
+portfolio/
+│
+├── README.md
+│
+├── index.html
+├── aboutme.html
+│
+├── portfolio.css
+├── aboutme.css
+│
+├── portfolio.js
+├── aboutme.js
+│
+└── screenshots/
+    ├── portfolio-home.png
+    ├── portfolio-projects.png
+    ├── portfolio-experience.png
+    ├── about-journey.png
+    └── mobile-view.png
+```
+
+---
+
+# ⚡ Performance
+
+The portfolio focuses on lightweight frontend development using:
+
+- Optimized images
+- Responsive image sizing
+- CSS-based animations
+- Efficient DOM event handling
+- Intersection Observer for scroll effects
+- Minimal external dependencies
+
+---
+
+# 🔮 Future Improvements
+
+- [ ] Add live demo links for more projects
+- [ ] Add dark/light theme switching
+- [ ] Add automated Lighthouse checks
+- [ ] Add accessibility testing
+- [ ] Add GitHub Actions for HTML/CSS validation
+- [ ] Add portfolio analytics
+- [ ] Continue improving mobile layouts
+- [ ] Add additional project case studies
+
+---
+
+# 👩‍💻 Author
+
+## Rachana Sudhakar
+
+**MS Computer Science**  
+Northeastern University
+
+📍 Boston, Massachusetts
+
+🌐 [Portfolio](https://rachana1707-s.github.io/portfolio/)
+
+🐙 [GitHub](https://github.com/rachana1707-S)
+
+💼 [LinkedIn](https://linkedin.com/in/rachanasudhakar)
+
+✉️ [Email](mailto:rachanasudhakar17@gmail.com)
+
+---
+
+⭐ **If you find my work interesting, feel free to explore the projects and connect with me.**
+
+Built with ❤️ by **Rachana Sudhakar**
