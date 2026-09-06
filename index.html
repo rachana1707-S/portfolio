@@ -655,56 +655,20 @@
       background: var(--light-gray);
     }
 
-    .education-timeline {
-      position: relative;
-      max-width: 1200px;
+    .education-grid {
+      max-width: 1100px;
       margin: 0 auto;
-    }
-
-    .education-timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
-      background: var(--gradient-accent);
-      border-radius: 2px;
-      box-shadow: 0 0 20px rgba(94, 80, 63, 0.3);
-    }
-
-    .education-item {
-      position: relative;
-      margin: 4rem 0;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
-    }
-
-    .education-item.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .education-item:nth-child(odd) .education-card {
-      margin-right: 55%;
-      text-align: right;
-    }
-
-    .education-item:nth-child(even) .education-card {
-      margin-left: 55%;
-      text-align: left;
     }
 
     .education-card {
       background: var(--pure-white);
       border-radius: var(--border-radius);
-      padding: 0;
       box-shadow: var(--shadow-medium);
-      border: 3px solid var(--cream);
-      transition: var(--transition);
+      border: 2px solid var(--cream);
       overflow: hidden;
       position: relative;
+      height: 100%;
+      transition: var(--transition);
     }
 
     .education-card::before {
@@ -718,124 +682,132 @@
     }
 
     .education-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-heavy);
-      border-color: var(--teal-blue);
     }
 
     .education-header {
-      background: var(--gradient-light);
-      padding: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
+      padding: 2rem 2rem 1.25rem;
+      background: var(--gradient-light);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
 
     .education-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 4px solid var(--warm-brown);
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+      background: var(--pure-white);
+      border-radius: 14px;
+      padding: 8px;
       box-shadow: var(--shadow-light);
-      object-fit: cover;
-      transition: var(--transition);
-    }
-
-    .education-logo:hover {
-      transform: scale(1.1) rotate(5deg);
-      border-color: var(--teal-blue);
+      flex-shrink: 0;
     }
 
     .education-level {
-      background: var(--gradient-accent);
-      color: var(--pure-white);
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+      display: inline-block;
+      color: var(--warm-brown);
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .education-body {
-      padding: 2rem;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.4rem;
     }
 
     .education-title {
       color: var(--dark-navy);
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .education-body {
+      padding: 1.6rem 2rem 2rem;
     }
 
     .education-institution {
       color: var(--teal-blue);
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-size: 1.15rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
-    .education-department {
+    .education-location {
       color: #666;
-      font-style: italic;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .education-location i {
+      color: var(--warm-brown);
+      margin-right: 0.4rem;
     }
 
     .education-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .education-duration,
+    .education-status {
+      display: inline-flex;
       align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 22px;
+      font-size: 0.88rem;
+      font-weight: 600;
     }
 
     .education-duration {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--warm-brown);
-      font-weight: 600;
-    }
-
-    .education-status {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      background: rgba(10, 41, 71, 0.08);
+      color: var(--dark-navy);
     }
 
     .education-status.current {
-      background: linear-gradient(135deg, var(--success-green), #20c997);
-      color: var(--pure-white);
+      background: rgba(94, 80, 63, 0.12);
+      color: var(--warm-brown);
     }
 
     .education-status.completed {
-      background: var(--gradient-accent);
-      color: var(--pure-white);
+      background: rgba(38, 110, 85, 0.11);
+      color: #276b54;
     }
 
-    .education-connector {
-      position: absolute;
-      top: 50%;
-      width: 25px;
-      height: 25px;
-      background: var(--warm-brown);
-      border-radius: 50%;
-      border: 5px solid var(--pure-white);
-      box-shadow: var(--shadow-light);
-      transform: translateY(-50%);
-      z-index: 10;
+    .education-highlight {
+      margin: 0;
+      color: #555;
+      line-height: 1.65;
     }
 
-    .education-item:nth-child(odd) .education-connector {
-      right: -62px;
+    .education-highlight i {
+      color: var(--warm-brown);
+      margin-right: 0.45rem;
     }
 
-    .education-item:nth-child(even) .education-connector {
-      left: -62px;
+    @media (max-width: 767px) {
+      .education-header {
+        align-items: flex-start;
+        padding: 1.5rem;
+      }
+
+      .education-body {
+        padding: 1.4rem 1.5rem 1.6rem;
+      }
+
+      .education-logo {
+        width: 64px;
+        height: 64px;
+      }
+
+      .education-title {
+        font-size: 1.15rem;
+      }
     }
 
     /* Skills Section */
@@ -1727,61 +1699,62 @@
     <div class="section-floating-icons" id="educationFloatingIcons"></div>
     <div class="container">
       <h2 class="section-title">Education</h2>
-      
-      <div class="education-timeline">
+
+      <div class="row g-4 education-grid">
         <!-- Masters -->
-        <div class="education-item">
+        <div class="col-lg-6">
           <div class="education-card">
             <div class="education-header">
               <img src="assests/neu_logo.png" alt="Northeastern University" class="education-logo">
               <div>
-                <div class="education-level">Masters Degree</div>
-                <h4 class="education-title">Masters in Computer Science</h4>
+                <div class="education-level">Master's Degree</div>
+                <h4 class="education-title">Master of Science in Computer Science</h4>
               </div>
             </div>
             <div class="education-body">
               <h5 class="education-institution">Northeastern University</h5>
-              <p class="education-department">Khoury College of Engineering</p>
+              <p class="education-location"><i class="fas fa-map-marker-alt"></i>Boston, Massachusetts</p>
               <div class="education-meta">
                 <div class="education-duration">
                   <i class="fas fa-calendar-alt"></i>
-                  <span>2024 - Present</span>
+                  <span>Sept 2024 - Dec 2026</span>
                 </div>
                 <div class="education-status current">
                   <i class="fas fa-graduation-cap"></i>
-                  <span>Currently Pursuing</span>
+                  <span>In Progress</span>
                 </div>
               </div>
+              <p class="education-highlight"><i class="fas fa-laptop-code"></i>Graduate studies focused on computer science, software engineering, AI, and modern software systems.</p>
             </div>
           </div>
-          <div class="education-connector"></div>
         </div>
 
         <!-- Bachelors -->
-        <div class="education-item">
+        <div class="col-lg-6">
           <div class="education-card">
             <div class="education-header">
-              <img src="assests/dyp_logo.jpeg" alt="DY Patil University" class="education-logo">
+              <img src="assests/dyp_logo.jpeg" alt="DY Patil School of Engineering and Technology" class="education-logo">
               <div>
                 <div class="education-level">Bachelor's Degree</div>
-                <h4 class="education-title">Computer Science Engineering</h4>
+                <h4 class="education-title">Bachelor of Technology in Computer Science</h4>
               </div>
             </div>
             <div class="education-body">
               <h5 class="education-institution">DY Patil School of Engineering and Technology</h5>
+              <p class="education-location"><i class="fas fa-map-marker-alt"></i>Pune, India</p>
               <div class="education-meta">
                 <div class="education-duration">
                   <i class="fas fa-calendar-alt"></i>
-                  <span>2020 - 2024</span>
+                  <span>Aug 2020 - Aug 2024</span>
                 </div>
                 <div class="education-status completed">
                   <i class="fas fa-medal"></i>
-                  <span>Gold Medal</span>
+                  <span>Gold Medalist</span>
                 </div>
               </div>
+              <p class="education-highlight"><i class="fas fa-award"></i>Graduated with a strong foundation in computer science, programming, databases, and software development.</p>
             </div>
           </div>
-          <div class="education-connector"></div>
         </div>
       </div>
     </div>
@@ -1889,17 +1862,17 @@
             <div class="card-body p-4">
               <h4 class="experience-title">Robotics Software Engineering Co-op</h4>
               <h5 class="experience-company">Orpheus Ocean</h5>
-              <p class="experience-duration"><strong>Duration:</strong> Jan 2026 - Expected Jun 2026</p>
+              <p class="experience-duration"><strong>Duration:</strong> Jan 2026 - Aug 2026</p>
               
               <h6><strong>Key Achievements:</strong></h6>
               <ul>
-                <li>Reduced AUV mission setup time by 70% from 2+ hours to under 30 minutes by building a full-stack web application using React, Node.js, FastAPI, and PostgreSQL</li>
-                <li>Enabled visual mission planning by integrating OpenMapTiles API for interactive waypoint selection with path planning algorithms</li>
-                <li>Validated mission configurations through Gazebo simulator with 40+ test scenarios and JUnit testing, implementing RESTful APIs following SDLC</li>
-                <li>Served 10+ marine research operators, replacing manual script-based workflows with an intuitive operator interface</li>
+                <li>Built real-time monitoring and control tools for autonomous underwater vehicles using ROS2, Python, FastAPI, React.js, and TypeScript, reducing telemetry delay from about 5 seconds to 100ms</li>
+                <li>Developed the operator control interface for thruster control, power management, live WebSocket telemetry, and role-based access, used by 13 operators</li>
+                <li>Connected frontend applications with robotic systems through ROS2 publish/subscribe communication and tested workflows across 40+ Gazebo simulations and 35+ live AUV deployments</li>
+                <li>Set up Intel NUC and LattePanda systems to host 3 internal websites with Docker and created NAS-based storage for shared team access</li>
               </ul>
               
-              <p><strong>Technologies:</strong> React, Node.js, FastAPI, PostgreSQL, OpenMapTiles API, Gazebo, JUnit, RESTful APIs</p>
+              <p><strong>Technologies:</strong> ROS2, Python, FastAPI, React.js, TypeScript, WebSocket, Gazebo, NVIDIA Jetson, Docker, Intel NUC, LattePanda, NAS</p>
             </div>
           </div>
         </div>
@@ -1915,13 +1888,13 @@
               
               <h6><strong>Key Achievements:</strong></h6>
               <ul>
-                <li>Engineered responsive IPL Score Tracker using React.js, JavaScript, and Java Swing with MySQL database connections achieving 99.9% accuracy</li>
-                <li>Developed end-to-end BFSI SAP Uploader using Spring Boot and Maven, improving workflow efficiency by 40%</li>
-                <li>Implemented JWT authentication and role-based access control system</li>
-                <li>Designed UI/UX wireframes in Figma, increasing user engagement by 35%</li>
+                <li>Created responsive interfaces from Figma designs using React.js for desktop, tablet, and mobile users, helping improve user engagement by 35%</li>
+                <li>Built a real-time IPL Score Tracker with React.js, JavaScript, and MySQL that supported 5,000+ concurrent users and maintained 99.9% accuracy for run-rate calculations</li>
+                <li>Worked with a 3-person database team to connect the score tracker with reliable backend data and keep match information accurate</li>
+                <li>Developed a BFSI SAP Uploader using Spring Boot and Maven to process 10,000+ records daily for 3 insurance clients, including validation for inconsistent data</li>
               </ul>
               
-              <p><strong>Technologies:</strong> React.js, JavaScript, Java Swing, Spring Boot, Maven, MySQL, JWT, Figma</p>
+              <p><strong>Technologies:</strong> React.js, JavaScript, MySQL, Spring Boot, Maven, Figma</p>
             </div>
             <div class="card-footer text-center">
               <a href="assests/exp/tcs.pdf" target="_blank" class="btn btn-certificate">
@@ -1932,7 +1905,7 @@
         </div>
         
         <!-- Bolt IOT Experience -->
-        <div class="col-lg-6">
+        <div class="col-lg-6 mx-auto">
           <div class="card experience-card h-100">
             <img src="assests/exp/bolt.jpeg" alt="Bolt IOT" class="card-img-top experience-logo">
             <div class="card-body p-4">
@@ -2169,6 +2142,36 @@
             <div class="row g-4">
               <div class="col-lg-4 col-md-6">
                 <div class="project-card">
+                  <img src="assests/analysis.png" alt="AI Code Review Assistant" class="w-100 project-image">
+                  <div class="project-content">
+                    <h4 class="project-title">AI Code Review Assistant</h4>
+                    <p class="project-description">
+                      An AI-powered full-stack code analysis platform built with React, FastAPI, Monaco Editor, PostgreSQL, and CodeBERT. It detects syntax, quality, security, and style issues, highlights problems directly in code, supports severity-based filtering, generates quality scores, and stores review history with JWT authentication.
+                    </p>
+                    <a href="https://github.com/rachana1707-S/AI-Code-Review-Assistant" target="_blank" class="btn-github">
+                      <i class="fab fa-github me-2"></i>View on GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="project-card">
+                  <img src="assests/food-analysis.png" alt="AI Food Calorie Estimator" class="w-100 project-image">
+                  <div class="project-content">
+                    <h4 class="project-title">AI Food Calorie Estimator</h4>
+                    <p class="project-description">
+                      An AI-powered full-stack application that identifies food from uploaded images and estimates calories and macronutrients based on portion size. It uses an EfficientNetV2B0 model trained on Food-101, a FastAPI backend, React frontend, and USDA FoodData Central nutrition data.
+                    </p>
+                    <a href="https://github.com/rachana1707-S/ai-food-calorie-estimator" target="_blank" class="btn-github">
+                      <i class="fab fa-github me-2"></i>View on GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="project-card">
                   <img src="assests/project8.jpg" alt="Sentiment Aura" class="w-100 project-image">
                   <div class="project-content">
                     <h4 class="project-title">Sentiment Aura - AI Emotion Visualizer</h4>
@@ -2181,7 +2184,12 @@
                   </div>
                 </div>
               </div>
-              
+            </div>
+          </div>
+          
+          <!-- Second Slide -->
+          <div class="carousel-item">
+            <div class="row g-4">
               <div class="col-lg-4 col-md-6">
                 <div class="project-card">
                   <img src="assests/project9.jpg" alt="Poll Vote App" class="w-100 project-image">
@@ -2211,12 +2219,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <!-- Second Slide -->
-          <div class="carousel-item">
-            <div class="row g-4">
+
               <div class="col-lg-4 col-md-6">
                 <div class="project-card">
                   <img src="assests/project2.webp" alt="Plant Disease Detection" class="w-100 project-image">
@@ -2231,7 +2234,12 @@
                   </div>
                 </div>
               </div>
-              
+            </div>
+          </div>
+          
+          <!-- Third Slide -->
+          <div class="carousel-item">
+            <div class="row g-4">
               <div class="col-lg-4 col-md-6">
                 <div class="project-card">
                   <img src="assests/project3.jpg" alt="Song Recommendation" class="w-100 project-image">
@@ -2261,12 +2269,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <!-- Third Slide -->
-          <div class="carousel-item">
-            <div class="row g-4">
+
               <div class="col-lg-4 col-md-6">
                 <div class="project-card">
                   <img src="assests/project5.jpeg" alt="Coffee Shop Website" class="w-100 project-image">
@@ -2281,7 +2284,12 @@
                   </div>
                 </div>
               </div>
-              
+            </div>
+          </div>
+
+          <!-- Fourth Slide -->
+          <div class="carousel-item">
+            <div class="row g-4">
               <div class="col-lg-4 col-md-6">
                 <div class="project-card">
                   <img src="assests/project6.webp" alt="Kanbas LMS" class="w-100 project-image">
@@ -2291,6 +2299,21 @@
                       Kanbas is a web-based learning management system (LMS) designed to streamline course management and enhance online learning experiences. It enables users to manage courses, assignments, and modules efficiently while providing role-based access for students and faculty.
                     </p>
                     <a href="https://github.com/rachana1707-S/kanbas-react-web-app" target="_blank" class="btn-github">
+                      <i class="fab fa-github me-2"></i>View on GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <div class="project-card">
+                  <img src="https://opengraph.githubassets.com/1/rachana1707-S/ocean-pipeline" alt="Ocean Sensor Data Pipeline" class="w-100 project-image">
+                  <div class="project-content">
+                    <h4 class="project-title">Ocean Sensor Data Pipeline</h4>
+                    <p class="project-description">
+                      A production-grade end-to-end data engineering pipeline that ingests real-time NOAA CO-OPS ocean buoy sensor data, validates and transforms the data, stores it in PostgreSQL, and presents analytics through an interactive Streamlit and Plotly dashboard. The pipeline is containerized with Docker for reproducible deployment.
+                    </p>
+                    <a href="https://github.com/rachana1707-S/ocean-pipeline" target="_blank" class="btn-github">
                       <i class="fab fa-github me-2"></i>View on GitHub
                     </a>
                   </div>
@@ -2308,8 +2331,11 @@
           <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Projects 4-6">
             <span class="indicator-number">2</span>
           </button>
-          <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Project 7-8">
+          <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Projects 7-9">
             <span class="indicator-number">3</span>
+          </button>
+          <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3" aria-label="Projects 10-11">
+            <span class="indicator-number">4</span>
           </button>
         </div>
       </div>
@@ -2417,7 +2443,7 @@
           </a>
         </div>
         <div class="col-auto">
-          <a href="assests/Rachana_Sudhakar_resume.pdf" target="_blank" class="btn btn-resume social-btn">
+          <a href="assests/RachanaSudhakar_resume.pdf" target="_blank" class="btn btn-resume social-btn">
             <i class="fas fa-file-alt me-2"></i>Resume
           </a>
         </div>

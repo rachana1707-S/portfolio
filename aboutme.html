@@ -1,1525 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Journey - Rachana Sudhakar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* CSS Variables - Consistent with main portfolio */
-        :root {
-            --dark-navy: #22333b;
-            --teal-blue: #334f5c;
-            --warm-brown: #5e503f;
-            --cream: #eae0d5;
-            --warm-beige: #c6ac8f;
-            --light-cream: #dfd4bff9;
-            --deep-black: #0a0908;
-            --pure-white: #ffffff;
-            --light-gray: #f8f9fa;
-            --gradient-primary: linear-gradient(135deg, var(--dark-navy) 0%, var(--teal-blue) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--warm-brown) 0%, var(--teal-blue) 100%);
-            --shadow-light: 0 8px 25px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.15);
-            --shadow-heavy: 0 25px 50px rgba(0, 0, 0, 0.2);
-            --border-radius: 20px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--light-cream);
-            color: var(--deep-black);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        h2 { font-size: 2.5rem; }
-        h3 { font-size: 2rem; }
-        h4 { font-size: 1.5rem; }
-
-        /* Floating Background Animation */
-        .floating-icons {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .floating-icon {
-            position: absolute;
-            color: rgba(94, 80, 63, 0.08);
-            font-size: 2rem;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { 
-                transform: translateY(100vh) rotate(0deg); 
-                opacity: 0; 
-            }
-            5% { opacity: 1; }
-            95% { opacity: 1; }
-            100% { 
-                transform: translateY(-100px) rotate(360deg); 
-                opacity: 0; 
-            }
-        }
-
-        /* Section-specific floating icons */
-        .section-floating-icons {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .section-floating-icon {
-            position: absolute;
-            color: rgba(94, 80, 63, 0.12);
-            font-size: 1.8rem;
-            animation: sectionFloat 25s infinite linear;
-        }
-
-        .section-floating-icon.small {
-            font-size: 1.2rem;
-            color: rgba(94, 80, 63, 0.08);
-        }
-
-        .section-floating-icon.medium {
-            font-size: 1.8rem;
-            color: rgba(94, 80, 63, 0.12);
-        }
-
-        .section-floating-icon.large {
-            font-size: 2.4rem;
-            color: rgba(94, 80, 63, 0.15);
-        }
-
-        @keyframes sectionFloat {
-            0% { 
-                transform: translateY(100%) rotate(0deg); 
-                opacity: 0; 
-            }
-            5% { opacity: 0.6; }
-            95% { opacity: 0.6; }
-            100% { 
-                transform: translateY(-100px) rotate(180deg); 
-                opacity: 0; 
-            }
-        }
-
-        /* Enhanced Header */
-        header {
-            background: var(--gradient-primary);
-            box-shadow: var(--shadow-medium);
-            backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--warm-brown);
-        }
-
-        .navbar {
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            color: var(--cream) !important;
-            font-weight: 800;
-            font-size: 1.5rem;
-            transition: var(--transition);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .navbar-brand:hover {
-            transform: scale(1.05);
-            color: var(--warm-beige) !important;
-        }
-
-        .navbar-brand:hover svg {
-            transform: rotate(10deg);
-        }
-
-        .nav-link {
-            color: var(--cream) !important;
-            font-weight: 600;
-            font-size: 1.1rem;
-            position: relative;
-            transition: var(--transition);
-            margin: 0 0.5rem;
-            padding: 0.75rem 1rem !important;
-            border-radius: 25px;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: var(--warm-beige);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover {
-            color: var(--warm-beige) !important;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .nav-link:hover::after {
-            width: 80%;
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 4px 8px;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28234, 224, 213, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        /* Enhanced Slideshow */
-        .slideshow {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            border-radius: 0 0 50px 50px;
-            box-shadow: var(--shadow-heavy);
-            margin-bottom: 2rem;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-        }
-
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .slide:hover img {
-            transform: scale(1.05);
-        }
-
-        .slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(34, 51, 59, 0.3), rgba(52, 79, 92, 0.3));
-            z-index: 1;
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--warm-brown);
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            cursor: pointer;
-            z-index: 10;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            transition: var(--transition);
-            box-shadow: var(--shadow-light);
-            border: 3px solid var(--pure-white);
-        }
-
-        .prev { left: 20px; }
-        .next { right: 20px; }
-
-        .prev:hover, .next:hover {
-            background: var(--teal-blue);
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-            color: var(--dark-navy);
-            position: relative;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
-            z-index: 2;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-        }
-
-        /* Qualities Section */
-        .qualities {
-            background: var(--light-cream);
-            position: relative;
-        }
-
-        .qualities-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .quality {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            border: 3px solid var(--warm-brown);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: 0 8px 25px rgba(94, 80, 63, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quality::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .quality:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 45px rgba(94, 80, 63, 0.3);
-            border-color: var(--teal-blue);
-        }
-
-        .quality i {
-            font-size: 3rem;
-            color: var(--warm-brown);
-            margin-bottom: 20px;
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
-        }
-
-        .quality:hover i {
-            transform: scale(1.2) rotate(10deg);
-            color: var(--teal-blue);
-        }
-
-        .quality h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--dark-navy);
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-        }
-
-        .quality p {
-            font-size: 1rem;
-            color: var(--deep-black);
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Milestones Section */
-        .milestones {
-            background: var(--gradient-primary);
-            color: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .milestones::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 75% 25%, rgba(255,255,255,0.1) 0%, transparent 50%);
-        }
-
-        .milestones h2 {
-            color: var(--cream);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .milestones h2::after {
-            background: var(--warm-beige);
-        }
-
-        .milestone-slider {
-            position: relative;
-            width: 80%;
-            margin: auto;
-            height: 400px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .milestone-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
-            opacity: 0;
-        }
-
-        .milestone-slide.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .milestone-slide:not(.active) {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-
-        .milestone {
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(20px);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            text-align: center;
-            width: 85%;
-            max-width: 600px;
-            box-shadow: var(--shadow-heavy);
-            border: 3px solid var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .milestone::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--gradient-accent);
-        }
-
-        .milestone-icon {
-            font-size: 4rem;
-            color: var(--warm-brown);
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-            transition: var(--transition);
-        }
-
-        .milestone:hover .milestone-icon {
-            color: var(--teal-blue);
-            animation-play-state: paused;
-            transform: scale(1.1);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        .milestone-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--dark-navy);
-            font-weight: bold;
-        }
-
-        .milestone-content p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .milestone-date {
-            display: inline-block;
-            margin-top: 15px;
-            font-size: 1rem;
-            color: var(--pure-white);
-            font-weight: bold;
-            background: var(--gradient-accent);
-            padding: 10px 25px;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(94, 80, 63, 0.3);
-        }
-
-        /* Milestone Navigation Dots */
-        .milestone-navigation {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .milestone-dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid var(--warm-beige);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .milestone-dot.active {
-            background: var(--warm-beige);
-            transform: scale(1.3);
-            box-shadow: 0 0 15px rgba(198, 172, 143, 0.5);
-        }
-
-        .milestone-dot:hover {
-            background: var(--warm-beige);
-            transform: scale(1.1);
-        }
-
-        /* Lessons Timeline */
-        .lessons {
-            background: var(--light-cream);
-            position: relative;
-        }
-
-        .lessons-timeline {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            margin: 0 auto;
-            padding: 20px 0;
-            max-width: 900px;
-        }
-
-        .lessons-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            width: 6px;
-            height: 100%;
-            background: var(--gradient-accent);
-            transform: translateX(-50%);
-            border-radius: 3px;
-            box-shadow: 0 0 20px rgba(94, 80, 63, 0.3);
-        }
-
-        .lesson-item {
-            display: flex;
-            align-items: center;
-            margin: 30px 0;
-            position: relative;
-        }
-
-        .lesson-item:nth-child(odd) {
-            flex-direction: row-reverse;
-            text-align: left;
-        }
-
-        .lesson-item:nth-child(even) {
-            text-align: right;
-        }
-
-        .lesson-icon {
-            background: var(--gradient-accent);
-            color: white;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            z-index: 2;
-            position: relative;
-            margin: 0 30px;
-            box-shadow: var(--shadow-light);
-            border: 4px solid white;
-            transition: var(--transition);
-        }
-
-        .lesson-icon:hover {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .lesson-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-            border: 3px solid var(--warm-brown);
-            padding: 25px 35px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 25px rgba(94, 80, 63, 0.2);
-            max-width: 45%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .lesson-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .lesson-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(94, 80, 63, 0.3);
-            border-color: var(--teal-blue);
-        }
-
-        .lesson-content h3 {
-            font-size: 1.4rem;
-            color: var(--dark-navy);
-            margin-bottom: 10px;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-        }
-
-        .lesson-content p {
-            font-size: 1rem;
-            color: var(--deep-black);
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Goals Section */
-        .headed {
-            background: var(--gradient-primary);
-            color: var(--cream);
-            position: relative;
-        }
-
-        .headed h2 {
-            color: var(--cream);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .headed h2::after {
-            background: var(--warm-beige);
-        }
-
-        .roadmap {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            position: relative;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        .roadmap::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            right: 5%;
-            height: 6px;
-            background: linear-gradient(90deg, var(--warm-beige), var(--cream));
-            z-index: 0;
-            border-radius: 3px;
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        }
-
-        .roadmap-step {
-            position: relative;
-            text-align: center;
-            width: 250px;
-            z-index: 1;
-        }
-
-        .step-icon {
-            background: linear-gradient(135deg, var(--warm-beige), var(--cream));
-            color: var(--dark-navy);
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 20px;
-            box-shadow: var(--shadow-medium);
-            border: 4px solid white;
-            transition: var(--transition);
-        }
-
-        .step-icon:hover {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: var(--shadow-heavy);
-        }
-
-        .step-content {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(15px);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-medium);
-            color: var(--dark-navy);
-            border: 3px solid var(--cream);
-            transition: var(--transition);
-        }
-
-        .step-content:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-heavy);
-            border-color: var(--warm-beige);
-        }
-
-        .step-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .step-content p {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #666;
-        }
-
-        /* Fuel Section */
-        .fuel {
-            background: var(--light-cream);
-            position: relative;
-        }
-
-        .fuel .intro-text {
-            font-size: 1.2rem;
-            margin-bottom: 50px;
-            color: var(--deep-black);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border: 2px solid var(--warm-brown);
-            box-shadow: 0 8px 25px rgba(94, 80, 63, 0.2);
-        }
-
-        .fuel-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            justify-items: center;
-            align-items: stretch;
-            position: relative;
-            z-index: 2;
-        }
-
-        .fuel-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 25px rgba(94, 80, 63, 0.2);
-            transition: var(--transition);
-            border: 3px solid var(--warm-brown);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
-        }
-
-        .fuel-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 45px rgba(94, 80, 63, 0.3);
-            border-color: var(--teal-blue);
-        }
-
-        .fuel-item img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
-        }
-
-        .fuel-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .fuel-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(34, 51, 59, 0.85), rgba(52, 79, 92, 0.85));
-            color: white;
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            text-align: center;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-            border-radius: var(--border-radius);
-        }
-
-        .fuel-item:hover .fuel-content {
-            opacity: 1;
-        }
-
-        .fuel-content i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--warm-beige);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .fuel-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .fuel-content p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--gradient-primary);
-            color: var(--cream);
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section {
-                padding: 60px 0;
-            }
-
-            .section h2 {
-                margin-bottom: 2rem;
-                font-size: 2rem;
-            }
-
-            .qualities-container {
-                grid-template-columns: 1fr;
-            }
-
-            .lessons-timeline::before {
-                left: 30px;
-            }
-
-            .lesson-item {
-                flex-direction: row !important;
-                text-align: left;
-            }
-
-            .lesson-icon {
-                margin: 0 15px 0 0;
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-
-            .lesson-content {
-                max-width: 75%;
-            }
-
-            .roadmap {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .roadmap::before {
-                width: 6px;
-                height: 80%;
-                left: 50%;
-                top: 10%;
-                transform: translateX(-50%);
-            }
-
-            .roadmap-step {
-                margin: 20px 0;
-            }
-
-            .fuel-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .milestone-slider {
-                width: 95%;
-            }
-
-            .milestone {
-                width: 90%;
-                padding: 30px 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul li a {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .section h2 {
-                font-size: 1.8rem;
-            }
-
-            .step-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 1.5rem;
-            }
-
-            .quality i {
-                font-size: 2.5rem;
-            }
-
-            .milestone-icon {
-                font-size: 3rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rachana Sudhakar's journey across full-stack development, AI, data engineering, and robotics.">
+  <title>My Journey | Rachana Sudhakar</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./aboutme.css">
 </head>
+
 <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--gradient-primary); z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease;">
-        <div class="loading-spinner" style="width: 60px; height: 60px; border: 4px solid var(--cream); border-top: 4px solid var(--warm-brown); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fa-solid fa-code"></i>
+          Portfolio
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#identity">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+            <li class="nav-item"><a class="nav-link" href="#journey">Journey</a></li>
+            <li class="nav-item"><a class="nav-link" href="#fuel">Beyond Code</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              Developer • Builder • Curious Learner
+            </div>
+
+            <h1>
+              I like turning
+              <span>complex systems</span>
+              into things people can actually use.
+            </h1>
+
+            <p class="hero-lead">
+              I work across full-stack software, AI, data, and robotics.
+              I care about how a system feels to use and how reliably it works underneath.
+            </p>
+
+            <div class="hero-tags">
+              <span class="hero-tag">Full-Stack</span>
+              <span class="hero-tag">Real-Time Systems</span>
+              <span class="hero-tag">AI / CV</span>
+              <span class="hero-tag">Data Engineering</span>
+              <span class="hero-tag">Human-Centered UI</span>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#stories" class="btn-main">
+                <i class="fa-solid fa-arrow-down"></i>
+                See my work style
+              </a>
+
+              <a href="index.html" class="btn-ghost">
+                <i class="fa-solid fa-house"></i>
+                Back to portfolio
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img
+              class="hero-photo"
+              src="assests/aboutme/20240922_145340.jpg"
+              alt="Rachana Sudhakar"
+            >
+
+            <div class="float-card fc1">
+              <i class="fa-solid fa-diagram-project"></i>
+              <div>
+                <strong>Systems thinker</strong>
+                <small>UI → API → data → hardware</small>
+              </div>
+            </div>
+
+            <div class="float-card fc2">
+              <i class="fa-solid fa-bolt"></i>
+              <div>
+                <strong>Real-time mindset</strong>
+                <small>WebSockets, telemetry, events</small>
+              </div>
+            </div>
+
+            <div class="float-card fc3">
+              <i class="fa-solid fa-people-group"></i>
+              <div>
+                <strong>Built for teams</strong>
+                <small>Clear workflows, usable tools</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SUMMARY -->
+    <div class="container quick-strip reveal">
+      <div class="quick-grid">
+        <div class="quick-item">
+          <i class="fa-solid fa-layer-group"></i>
+          <strong>Full-Stack</strong>
+          <span>React • FastAPI • Node • Java</span>
+        </div>
+
+        <div class="quick-item">
+          <i class="fa-solid fa-robot"></i>
+          <strong>Robotics</strong>
+          <span>ROS2 • Gazebo • AUV systems</span>
+        </div>
+
+        <div class="quick-item">
+          <i class="fa-solid fa-brain"></i>
+          <strong>AI / CV</strong>
+          <span>TensorFlow • EfficientNet</span>
+        </div>
+
+        <div class="quick-item">
+          <i class="fa-solid fa-database"></i>
+          <strong>Data</strong>
+          <span>PostgreSQL • pipelines • APIs</span>
+        </div>
+
+        <div class="quick-item">
+          <i class="fa-solid fa-user-check"></i>
+          <strong>Product thinking</strong>
+          <span>Clear, safe, useful interfaces</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Floating Icons Background -->
-    <div class="floating-icons" id="floatingIcons"></div>
-
-    <!-- Navigation Bar -->
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-code-fill" viewBox="0 0 16 16">
-                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708"/>
-                    </svg>
-                    Portfolio
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#qualities">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#milestones">Milestones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#lessons">Lessons</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#goals">Goals</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#fuel">Fuel</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Image Slideshow -->
-    <section class="slideshow">
-        <div class="slides" id="slides">
-            <div class="slide"><img src="assests/aboutme/20240922_145340.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="assests/aboutme/IMG-20240411-WA0017.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="assests/aboutme/IMG-20240410-WA0044.jpg" alt="Slide 3"></div>
+    <!-- IDENTITY -->
+    <section id="identity" class="section identity">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">How I work</span>
+          <h2>More than a list of adjectives</h2>
+          <p>Each trait comes from how I approach real projects.</p>
         </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+        <div class="bento">
+          <article class="bento-card dark b1 reveal">
+            <div class="bento-icon"><i class="fa-solid fa-sitemap"></i></div>
+            <h3>I think in systems</h3>
+            <p>I like understanding the full path, not only my screen or service.</p>
+
+            <div class="micro-proof">
+              <span>Frontend</span>
+              <span>Backend</span>
+              <span>Data</span>
+              <span>ROS2</span>
+              <span>Infrastructure</span>
+            </div>
+          </article>
+
+          <article class="bento-card accent b2 reveal">
+            <div class="bento-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>I debug methodically</h3>
+            <p>Break the problem into layers. Verify each step. Find the real failure.</p>
+          </article>
+
+          <article class="bento-card b3 reveal">
+            <div class="bento-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>I design for people</h3>
+            <p>Useful software needs clear feedback, validation, and sensible defaults.</p>
+          </article>
+
+          <article class="bento-card b4 reveal">
+            <div class="bento-icon"><i class="fa-solid fa-flask"></i></div>
+            <h3>I test before I trust</h3>
+            <p>Simulation, edge cases, and repeatable checks are part of the build.</p>
+          </article>
+
+          <article class="bento-card accent b5 reveal">
+            <div class="bento-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <h3>I adapt fast</h3>
+            <p>From web apps to robotics and AI, I enjoy learning the system in front of me.</p>
+          </article>
+
+          <article class="bento-card dark b6 reveal">
+            <div class="bento-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>I build with the team in mind</h3>
+            <p>Shared tools, maintainable code, documentation, and smoother workflows matter.</p>
+
+            <div class="micro-proof">
+              <span>Collaboration</span>
+              <span>Ownership</span>
+              <span>Communication</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- What Defines Me Section -->
-    <section id="qualities" class="section qualities">
-        <div class="section-floating-icons" id="qualitiesFloatingIcons"></div>
-        <div class="container">
-            <h2><i class="fas fa-star"></i> What Defines Me</h2>
-            <div class="qualities-container">
-                <div class="quality">
-                    <i class="fas fa-brain"></i>
-                    <h3>Adaptable Problem-Solver</h3>
-                    <p>I quickly adjust to new environments and challenges, whether it's learning new tools or adapting to different team dynamics during internships or projects.</p>
-                </div>
-                <div class="quality">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovative Thinker</h3>
-                    <p>I approach problem-solving creatively, finding unique and efficient solutions in projects like the Kanbas app or image processing tasks.</p>
-                </div>
-                <div class="quality">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Inspiring Leader</h3>
-                    <p>I confidently take initiative and guide teams toward success, inspiring collaboration and ensuring smooth execution of projects.</p>
-                </div>
-                <div class="quality">
-                    <i class="fas fa-book"></i>
-                    <h3>Precision Specialist</h3>
-                    <p>I focus on details, ensuring thorough documentation and rigorous testing to deliver polished, error-free work in every assignment.</p>
-                </div>
-                <div class="quality">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Team Player Extraordinaire</h3>
-                    <p>I thrive in team settings, leveraging strong communication skills to articulate ideas and foster collaboration effectively.</p>
-                </div>
-                <div class="quality">
-                    <i class="fas fa-users"></i>
-                    <h3>Curious Learner</h3>
-                    <p>I am passionate about learning and consistently explore new technologies, programming techniques, and design patterns to improve my skills.</p>
-                </div>
-            </div>
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">My toolbox</span>
+          <h2>Skills, grouped by how I use them</h2>
+          <p>Click a category to filter the cards.</p>
         </div>
+
+        <div class="skill-tabs reveal" role="group" aria-label="Skill filters">
+          <button class="skill-tab active" data-filter="all">All</button>
+          <button class="skill-tab" data-filter="build">Build</button>
+          <button class="skill-tab" data-filter="connect">Connect</button>
+          <button class="skill-tab" data-filter="analyze">Analyze</button>
+          <button class="skill-tab" data-filter="operate">Operate</button>
+        </div>
+
+        <div class="skill-grid">
+          <div class="skill-card reveal" data-group="build">
+            <i class="fa-brands fa-react"></i>
+            <h4>Interfaces</h4>
+            <p>React, TypeScript, responsive UI, reusable components.</p>
+            <div class="skill-meter"><span style="width:92%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="build">
+            <i class="fa-solid fa-server"></i>
+            <h4>Backend APIs</h4>
+            <p>FastAPI, Node.js, Java/Spring, REST, auth and validation.</p>
+            <div class="skill-meter"><span style="width:88%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="connect">
+            <i class="fa-solid fa-wave-square"></i>
+            <h4>Real-Time Data</h4>
+            <p>WebSockets, event-driven updates, telemetry synchronization.</p>
+            <div class="skill-meter"><span style="width:86%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="connect">
+            <i class="fa-solid fa-robot"></i>
+            <h4>Robotics Integration</h4>
+            <p>ROS2 nodes, topics, services, Gazebo and control workflows.</p>
+            <div class="skill-meter"><span style="width:80%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="analyze">
+            <i class="fa-solid fa-brain"></i>
+            <h4>AI / Computer Vision</h4>
+            <p>TensorFlow, transfer learning, image classification, model inference.</p>
+            <div class="skill-meter"><span style="width:82%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="analyze">
+            <i class="fa-solid fa-database"></i>
+            <h4>Data Systems</h4>
+            <p>PostgreSQL, MySQL, validation pipelines, API-driven data flows.</p>
+            <div class="skill-meter"><span style="width:85%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="operate">
+            <i class="fa-brands fa-docker"></i>
+            <h4>Deployment & Infra</h4>
+            <p>Docker, Linux, on-prem servers, NAS-backed team services.</p>
+            <div class="skill-meter"><span style="width:78%"></span></div>
+          </div>
+
+          <div class="skill-card reveal" data-group="operate">
+            <i class="fa-solid fa-vial-circle-check"></i>
+            <h4>Testing & Reliability</h4>
+            <p>Simulation, workflow validation, edge cases and stage-by-stage debugging.</p>
+            <div class="skill-meter"><span style="width:89%"></span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Milestones Section -->
-    <section id="milestones" class="section milestones">
-        <div class="container">
-            <h2><i class="fas fa-medal"></i> Milestones That Matter</h2>
-            <div class="milestone-slider" id="milestoneSlider">
-                <div class="milestone-slide active">
-                    <div class="milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>Outstanding Student Award</h3>
-                            <p>Recognized for exceptional academic excellence and dedication, earning the prestigious Outstanding Student Award in the Computer Science department.</p>
-                            <span class="milestone-date">2024</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="milestone-slide">
-                    <div class="milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>Academic Excellence Awardee</h3>
-                            <p>I earned the gold medal for achieving the highest score in my bachelor's program, showcasing my dedication, hard work, and consistent academic performance.</p>
-                            <span class="milestone-date">2024</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="milestone-slide">
-                    <div class="milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>Graduated with Honors</h3>
-                            <p>Completed a degree with honors, showcasing consistent dedication and academic excellence throughout the program.</p>
-                            <span class="milestone-date">2024</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="milestone-slide">
-                    <div class="milestone">
-                        <div class="milestone-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="milestone-content">
-                            <h3>Successful Internship</h3>
-                            <p>Completed a successful internship, gaining hands-on experience in software development and project management.</p>
-                            <span class="milestone-date">2023</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Milestone Navigation -->
-            <div class="milestone-navigation">
-                <div class="milestone-dot active" onclick="showMilestoneSlide(0)"></div>
-                <div class="milestone-dot" onclick="showMilestoneSlide(1)"></div>
-                <div class="milestone-dot" onclick="showMilestoneSlide(2)"></div>
-                <div class="milestone-dot" onclick="showMilestoneSlide(3)"></div>
-            </div>
+    <!-- STORIES -->
+    <section id="stories" class="section stories">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker stories-kicker">Proof, not paragraphs</span>
+          <h2>A few stories that show how I work</h2>
+          <p>Click any card to see more detail.</p>
         </div>
+
+        <div class="story-grid">
+          <!-- STORY 1 -->
+          <article class="story-card featured reveal" tabindex="0">
+            <img src="assests/orpheus.webp" alt="Autonomous underwater robotics">
+
+            <div class="story-hint" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="story-overlay">
+              <span class="story-type">Systems + Robotics</span>
+              <h3>From a UI task to the full control stack</h3>
+              <p>React → FastAPI → WebSockets → ROS2 → Gazebo → live operations.</p>
+
+              <div class="story-more">
+                <p>
+                  What began as a browser interface became a deeper systems project.
+                  I had to understand telemetry, control topics, validation, simulation,
+                  backend state, and the operator workflow together.
+                </p>
+
+                <div class="story-facts">
+                  <span><i class="fa-solid fa-satellite-dish"></i> Live telemetry</span>
+                  <span><i class="fa-solid fa-gamepad"></i> Manual control</span>
+                  <span><i class="fa-solid fa-route"></i> Mission planning</span>
+                  <span><i class="fa-solid fa-shield-halved"></i> Safer inputs</span>
+                  <span><i class="fa-solid fa-vial"></i> Gazebo testing</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 2 -->
+          <article class="story-card reveal" tabindex="0">
+            <img src="assests/ipl.png" alt="Live sports dashboard">
+
+            <div class="story-hint" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="story-overlay">
+              <span class="story-type">Full-Stack</span>
+              <h3>Live IPL score tracking</h3>
+              <p>Fast updates, responsive UI, and reliable run-rate calculations.</p>
+
+              <div class="story-more">
+                <p>
+                  At TCS, I worked on a live score experience designed for thousands
+                  of concurrent users. The work connected frontend behavior with
+                  database-backed calculations and required close coordination with
+                  the data team.
+                </p>
+
+                <div class="story-facts">
+                  <span><i class="fa-solid fa-users"></i> 5,000+ concurrent users</span>
+                  <span><i class="fa-solid fa-chart-line"></i> Live score updates</span>
+                  <span><i class="fa-solid fa-database"></i> MySQL</span>
+                  <span><i class="fa-solid fa-mobile-screen"></i> Responsive UI</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 3 -->
+          <article class="story-card reveal" tabindex="0">
+            <img src="assests/food-analysis.png" alt="Food AI">
+
+            <div class="story-hint" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="story-overlay">
+              <span class="story-type">AI + Product</span>
+              <h3>Food calorie prediction</h3>
+              <p>Computer vision plus nutrition data turned into a practical app.</p>
+
+              <div class="story-more">
+                <p>
+                  The project goes beyond image classification. It identifies food,
+                  estimates a portion, then connects the prediction with nutrition
+                  information so the result is useful to a real user.
+                </p>
+
+                <div class="story-facts">
+                  <span><i class="fa-solid fa-camera"></i> Food image input</span>
+                  <span><i class="fa-solid fa-brain"></i> EfficientNetV2B0</span>
+                  <span><i class="fa-solid fa-utensils"></i> 101 food classes</span>
+                  <span><i class="fa-solid fa-database"></i> USDA nutrition data</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 4 -->
+          <article class="story-card reveal" tabindex="0">
+            <img src="assests/analysis.png" alt="Code review">
+
+            <div class="story-hint" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="story-overlay">
+              <span class="story-type">Developer Tools</span>
+              <h3>AI Code Review Assistant</h3>
+              <p>Code analysis, severity filters, highlighting, and review history.</p>
+
+              <div class="story-more">
+                <p>
+                  I built the tool around one goal: make code feedback easier to act on.
+                  It combines static analysis and AI-assisted review with visual
+                  highlighting so a developer can focus on one issue type at a time.
+                </p>
+
+                <div class="story-facts">
+                  <span><i class="fa-solid fa-code"></i> Monaco Editor</span>
+                  <span><i class="fa-solid fa-bug"></i> Error highlighting</span>
+                  <span><i class="fa-solid fa-shield"></i> Security checks</span>
+                  <span><i class="fa-solid fa-clock-rotate-left"></i> Review history</span>
+                  <span><i class="fa-solid fa-key"></i> JWT auth</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 5 -->
+          <article class="story-card reveal" tabindex="0">
+            <img src="assests//oceanpipeline.png" alt="Ocean data pipeline">
+
+            <div class="story-hint" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="story-overlay">
+              <span class="story-type">Data Engineering</span>
+              <h3>Ocean sensor pipeline</h3>
+              <p>Ingest → validate → transform → store → visualize.</p>
+
+              <div class="story-more">
+                <p>
+                  I designed the project as an end-to-end pipeline instead of a single script.
+                  It fetches live ocean sensor data, cleans and validates it, stores it in
+                  PostgreSQL, and turns the result into a dashboard for exploration.
+                </p>
+
+                <div class="story-facts">
+                  <span><i class="fa-solid fa-water"></i> NOAA data</span>
+                  <span><i class="fa-solid fa-filter"></i> Validation</span>
+                  <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                  <span><i class="fa-solid fa-chart-area"></i> Streamlit</span>
+                  <span><i class="fa-brands fa-docker"></i> Docker</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 6 -->
+          <article class="story-card reveal" tabindex="0">
+            <img src="assests/kelp.png" alt="Engineering operations tools">
+
+            <div class="story-hint" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="story-overlay">
+              <span class="story-type">Operations + Infrastructure</span>
+              <h3>Building tools for the whole team</h3>
+              <p>Internal apps, inventory, scheduling, records, and shared infrastructure.</p>
+
+              <div class="story-more">
+                <p>
+                  One of my biggest takeaways from Orpheus was that useful engineering
+                  software includes the tools around the main product too. I worked with
+                  internal services, server hosting, storage, and workflow tools that help
+                  teams prepare, record, and coordinate operations.
+                </p>
+
+                <div class="story-facts">
+                  <span><i class="fa-solid fa-server"></i> On-prem servers</span>
+                  <span><i class="fa-solid fa-boxes-stacked"></i> Inventory workflows</span>
+                  <span><i class="fa-solid fa-calendar-days"></i> Scheduling</span>
+                  <span><i class="fa-brands fa-docker"></i> Docker services</span>
+                  <span><i class="fa-solid fa-hard-drive"></i> NAS storage</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Lessons Learned Section -->
-    <section id="lessons" class="section lessons">
-        <div class="section-floating-icons" id="lessonsFloatingIcons"></div>
-        <div class="container">
-            <h2><i class="fas fa-lightbulb"></i> What This Work Has Taught Me</h2>
-            <div class="lessons-timeline">
-                <div class="lesson-item">
-                    <div class="lesson-icon"><i class="fas fa-cogs"></i></div>
-                    <div class="lesson-content">
-                        <h3>Problem-Solving</h3>
-                        <p>From implementing image processing techniques to designing efficient data structures, I've learned to systematically analyze challenges and create innovative, optimized solutions.</p>
-                    </div>
-                </div>
-                <div class="lesson-item">
-                    <div class="lesson-icon"><i class="fas fa-users"></i></div>
-                    <div class="lesson-content">
-                        <h3>Collaboration</h3>
-                        <p>Whether presenting ideas during my internships or working on the Kanbas app, I've developed strong communication and teamwork skills, ensuring effective collaboration with diverse teams.</p>
-                    </div>
-                </div>
-                <div class="lesson-item">
-                    <div class="lesson-icon"><i class="fas fa-clock"></i></div>
-                    <div class="lesson-content">
-                        <h3>Time Management</h3>
-                        <p>Balancing coursework, projects like the SparsePolynomial class, and my Kanbas app development has taught me how to prioritize tasks and meet deadlines without compromising quality.</p>
-                    </div>
-                </div>
-                <div class="lesson-item">
-                    <div class="lesson-icon"><i class="fas fa-brain"></i></div>
-                    <div class="lesson-content">
-                        <h3>Adaptability</h3>
-                        <p>Shifting from frontend development in React to backend data structures and algorithms has enhanced my ability to quickly adapt to new tools, frameworks, and technologies.</p>
-                    </div>
-                </div>
-                <div class="lesson-item">
-                    <div class="lesson-icon"><i class="fas fa-drafting-compass"></i></div>
-                    <div class="lesson-content">
-                        <h3>Design Thinking</h3>
-                        <p>Building scalable solutions like the Kanbas app and refactoring systems, such as the pizza-building framework, taught me how to design user-focused and maintainable software.</p>
-                    </div>
-                </div>
-                <div class="lesson-item">
-                    <div class="lesson-icon"><i class="fas fa-code"></i></div>
-                    <div class="lesson-content">
-                        <h3>Technical Growth</h3>
-                        <p>Working on diverse projects, including Redux state management and implementing efficient algorithms for image manipulation, has deepened my technical expertise and coding efficiency.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- JOURNEY -->
+    <section id="journey" class="section journey">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">My path so far</span>
+          <h2>Learning by moving into harder systems</h2>
+          <p>Short timeline. Bigger scope each step.</p>
         </div>
+
+        <div class="journey-shell">
+          <div class="journey-photo reveal">
+            <img
+              src="assests/software.png"
+              alt="Collaborative software engineering workspace"
+            >
+
+            <div class="photo-caption">
+              <strong>What keeps changing?</strong>
+              <br>
+              <small>
+                The technology. What stays the same is curiosity, ownership,
+                and wanting to understand the whole system.
+              </small>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-step reveal">
+              <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div>
+                <h4>Built a strong CS foundation</h4>
+                <p>Algorithms, software design, projects, and academic consistency.</p>
+              </div>
+              <span class="timeline-year">2020–24</span>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="timeline-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div>
+                <h4>Moved into production-style web work</h4>
+                <p>Responsive interfaces, live applications, and data-backed systems.</p>
+              </div>
+              <span class="timeline-year">2023–24</span>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="timeline-icon"><i class="fa-solid fa-building-columns"></i></div>
+              <div>
+                <h4>Expanded through graduate CS</h4>
+                <p>AI, systems, full-stack development, and deeper engineering thinking.</p>
+              </div>
+              <span class="timeline-year">2024–26</span>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="timeline-icon"><i class="fa-solid fa-robot"></i></div>
+              <div>
+                <h4>Connected software to physical systems</h4>
+                <p>ROS2, telemetry, simulation, vehicle controls, and infrastructure.</p>
+              </div>
+              <span class="timeline-year">2026</span>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="timeline-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+              <div>
+                <h4>Now: building broader, more reliable systems</h4>
+                <p>Full-stack + AI + data + distributed and system-design thinking.</p>
+              </div>
+              <span class="timeline-year">Next</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Goals Section -->
-    <section id="goals" class="section headed">
-        <div class="container">
-            <h2><i class="fas fa-route"></i> Where I'm Headed</h2>
-            <div class="roadmap">
-                <div class="roadmap-step">
-                    <div class="step-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="step-content">
-                        <h3>Master's in Computer Science</h3>
-                        <p>I aim to expand my knowledge in web development, modern frontend frameworks, and full-stack technologies.</p>
-                    </div>
-                </div>
-                <div class="roadmap-step">
-                    <div class="step-icon"><i class="fas fa-code"></i></div>
-                    <div class="step-content">
-                        <h3>Becoming a Frontend Developer</h3>
-                        <p>My goal is to craft intuitive and user-friendly interfaces using tools like React, TypeScript, and other modern technologies.</p>
-                    </div>
-                </div>
-                <div class="roadmap-step">
-                    <div class="step-icon"><i class="fas fa-layer-group"></i></div>
-                    <div class="step-content">
-                        <h3>Mastering Full-Stack Development</h3>
-                        <p>I aspire to build robust and scalable web applications by integrating backend services seamlessly with dynamic frontends.</p>
-                    </div>
-                </div>
-                <div class="roadmap-step">
-                    <div class="step-icon"><i class="fas fa-rocket"></i></div>
-                    <div class="step-content">
-                        <h3>Driving Innovation</h3>
-                        <p>My vision is to continuously learn, innovate, and contribute to cutting-edge web solutions that make a global impact.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fuel Section -->
+    <!-- BEYOND CODE -->
     <section id="fuel" class="section fuel">
-        <div class="section-floating-icons" id="fuelFloatingIcons"></div>
-        <div class="container">
-            <h2><i class="fas fa-fire-alt"></i> The Fuel Behind My Journey</h2>
-            <p class="intro-text">
-                These activities ignite my passion, keep me motivated, and help me grow both personally and professionally.
-            </p>
-            <div class="fuel-grid">
-                <div class="fuel-item">
-                    <img src="assests/aboutme/walks.jpg" alt="Nature Walks">
-                    <div class="fuel-content">
-                        <i class="fas fa-tree"></i>
-                        <h3>Nature Walks</h3>
-                        <p>Spending time in nature refreshes my mind and provides inspiration for new ideas and perspectives.</p>
-                    </div>
-                </div>
-                <div class="fuel-item">
-                    <img src="assests/aboutme/dances.jpeg" alt="Dancing">
-                    <div class="fuel-content">
-                        <i class="fas fa-music"></i>
-                        <h3>Dancing</h3>
-                        <p>Dancing fuels my creativity and allows me to express myself through rhythm and movement.</p>
-                    </div>
-                </div>
-                <div class="fuel-item">
-                    <img src="assests/aboutme/coding.jpg" alt="Passion for Coding">
-                    <div class="fuel-content">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Passion for Coding</h3>
-                        <p>Building projects and solving problems through code ignites my drive to innovate and improve.</p>
-                    </div>
-                </div>
-                <div class="fuel-item">
-                    <img src="assests/aboutme/webb.jpg" alt="Creative Web Design">
-                    <div class="fuel-content">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Creative Web Design</h3>
-                        <p>Designing dynamic and user-friendly websites combines my technical skills with my passion for creativity.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Beyond code</span>
+          <h2>The things that keep me balanced</h2>
+          <p>A little more personality, without another wall of text.</p>
         </div>
+
+        <div class="fuel-grid">
+          <div class="fuel-card reveal">
+            <img src="assests/aboutme/walks.jpg" alt="Nature walks">
+            <div class="label"><i class="fa-solid fa-tree"></i> Nature & walks</div>
+          </div>
+
+          <div class="fuel-card reveal">
+            <img src="assests/aboutme/dances.jpeg" alt="Dancing">
+            <div class="label"><i class="fa-solid fa-music"></i> Dancing</div>
+          </div>
+
+          <div class="fuel-card reveal">
+            <img src="assests/aboutme/coding.jpg" alt="Coding">
+            <div class="label"><i class="fa-solid fa-code"></i> Building things</div>
+          </div>
+
+          <div class="fuel-card reveal">
+            <img src="assests/aboutme/webb.jpg" alt="Design">
+            <div class="label"><i class="fa-solid fa-pen-ruler"></i> Design & creativity</div>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="mb-0">&copy; 2024 Rachana Sudhakar. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer class="footer">
+    &copy; 2026 Rachana Sudhakar. All rights reserved.
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Loading screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loadingOverlay').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                }, 800);
-            }, 1200);
-        });
-
-        // Floating Icons Animation
-        function createFloatingIcons() {
-            const icons = [
-                'fas fa-code', 'fas fa-laptop-code', 'fas fa-database', 'fas fa-cogs',
-                'fas fa-rocket', 'fas fa-lightbulb', 'fas fa-brain', 'fas fa-tools',
-                'fab fa-react', 'fab fa-js-square', 'fab fa-python', 'fab fa-java',
-                'fas fa-server', 'fas fa-cloud', 'fas fa-mobile-alt', 'fas fa-globe',
-                'fas fa-star', 'fas fa-trophy', 'fas fa-medal', 'fas fa-graduation-cap',
-                'fas fa-chart-line', 'fas fa-project-diagram', 'fas fa-code-branch'
-            ];
-            
-            const container = document.getElementById('floatingIcons');
-            
-            function addIcon() {
-                const icon = document.createElement('i');
-                icon.className = `floating-icon ${icons[Math.floor(Math.random() * icons.length)]}`;
-                icon.style.left = Math.random() * 100 + '%';
-                icon.style.animationDuration = (Math.random() * 15 + 15) + 's';
-                icon.style.animationDelay = Math.random() * 5 + 's';
-                container.appendChild(icon);
-                
-                setTimeout(() => {
-                    if (container.contains(icon)) {
-                        container.removeChild(icon);
-                    }
-                }, 25000);
-            }
-            
-            for (let i = 0; i < 12; i++) {
-                setTimeout(addIcon, i * 1500);
-            }
-            
-            setInterval(addIcon, 3000);
-        }
-
-        // Section-specific floating icons
-        function createSectionFloatingIcons() {
-            const iconSets = {
-                qualities: [
-                    'fas fa-star', 'fas fa-heart', 'fas fa-lightbulb', 'fas fa-brain',
-                    'fas fa-trophy', 'fas fa-users', 'fas fa-sync-alt', 'fas fa-book',
-                    'fas fa-gem', 'fas fa-crown', 'fas fa-magic', 'fas fa-bolt'
-                ],
-                lessons: [
-                    'fas fa-cogs', 'fas fa-users', 'fas fa-clock', 'fas fa-brain',
-                    'fas fa-drafting-compass', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-puzzle-piece',
-                    'fas fa-chart-line', 'fas fa-target', 'fas fa-rocket', 'fas fa-gear'
-                ],
-                fuel: [
-                    'fas fa-tree', 'fas fa-music', 'fas fa-laptop-code', 'fas fa-paint-brush',
-                    'fas fa-fire-alt', 'fas fa-heart', 'fas fa-sun', 'fas fa-leaf',
-                    'fas fa-mountain', 'fas fa-palette', 'fas fa-camera', 'fas fa-bicycle'
-                ]
-            };
-
-            const sections = [
-                { id: 'qualitiesFloatingIcons', icons: iconSets.qualities },
-                { id: 'lessonsFloatingIcons', icons: iconSets.lessons },
-                { id: 'fuelFloatingIcons', icons: iconSets.fuel }
-            ];
-
-            const sizes = ['small', 'medium', 'large'];
-
-            sections.forEach(section => {
-                const container = document.getElementById(section.id);
-                if (!container) return;
-
-                function addSectionIcon() {
-                    const icon = document.createElement('i');
-                    const randomIcon = section.icons[Math.floor(Math.random() * section.icons.length)];
-                    const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
-                    
-                    icon.className = `section-floating-icon ${randomSize} ${randomIcon}`;
-                    icon.style.left = Math.random() * 100 + '%';
-                    icon.style.animationDelay = Math.random() * 10 + 's';
-                    icon.style.animationDuration = (Math.random() * 10 + 20) + 's';
-                    
-                    container.appendChild(icon);
-                    
-                    const duration = parseFloat(icon.style.animationDuration) * 1000;
-                    setTimeout(() => {
-                        if (container.contains(icon)) {
-                            container.removeChild(icon);
-                        }
-                    }, duration + 2000);
-                }
-
-                for (let i = 0; i < 8; i++) {
-                    setTimeout(addSectionIcon, i * 1200);
-                }
-
-                setInterval(addSectionIcon, 2500);
-            });
-        }
-        
-        window.addEventListener('load', () => {
-            setTimeout(createFloatingIcons, 1500);
-            setTimeout(createSectionFloatingIcons, 2000);
-        });
-
-        // Image Slideshow
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            const slidesContainer = document.getElementById('slides');
-            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        function changeSlide(direction) {
-            currentSlide += direction;
-            if (currentSlide >= totalSlides) currentSlide = 0;
-            if (currentSlide < 0) currentSlide = totalSlides - 1;
-            showSlide(currentSlide);
-        }
-
-        // Auto-play slideshow
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
-
-        // Milestone Slider with proper animation
-        let currentMilestone = 0;
-        const milestoneSlides = document.querySelectorAll('.milestone-slide');
-        const milestoneDots = document.querySelectorAll('.milestone-dot');
-        const totalMilestones = milestoneSlides.length;
-
-        function showMilestoneSlide(index) {
-            // Remove active class from all slides and dots
-            milestoneSlides.forEach(slide => slide.classList.remove('active'));
-            milestoneDots.forEach(dot => dot.classList.remove('active'));
-            
-            // Add active class to current slide and dot
-            milestoneSlides[index].classList.add('active');
-            milestoneDots[index].classList.add('active');
-            
-            currentMilestone = index;
-        }
-
-        // Auto-advance milestones
-        function autoAdvanceMilestones() {
-            currentMilestone = (currentMilestone + 1) % totalMilestones;
-            showMilestoneSlide(currentMilestone);
-        }
-
-        // Start auto-advance after page load
-        let milestoneInterval;
-        window.addEventListener('load', () => {
-            milestoneInterval = setInterval(autoAdvanceMilestones, 4000);
-        });
-
-        // Pause auto-advance on hover
-        const milestoneSlider = document.getElementById('milestoneSlider');
-        if (milestoneSlider) {
-            milestoneSlider.addEventListener('mouseenter', () => {
-                clearInterval(milestoneInterval);
-            });
-            
-            milestoneSlider.addEventListener('mouseleave', () => {
-                milestoneInterval = setInterval(autoAdvanceMilestones, 4000);
-            });
-        }
-
-        // Initialize milestone slider
-        showMilestoneSlide(0);
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.quality, .lesson-content, .step-content, .fuel-item');
-            animateElements.forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = `all 0.8s ease-out ${index * 0.1}s`;
-                observer.observe(el);
-            });
-        });
-
-        // Enhanced navbar scroll effect
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('header');
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 100) {
-                if (scrollTop > lastScrollTop) {
-                    navbar.style.transform = 'translateY(-100%)';
-                } else {
-                    navbar.style.transform = 'translateY(0)';
-                }
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-
-        // Add loading spinner keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./aboutme.js"></script>
 </body>
 </html>
